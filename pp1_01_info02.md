@@ -11,3 +11,4 @@ Plotly: Plotly es una librería de visualización interactiva para Python que pe
 Dash: Dash es una librería de Python para crear aplicaciones web interactivas. Es compatible con varias librerías de visualización, como Plotly, y permite crear aplicaciones de mapas interactivas.
 
 Recomendaria que utilizaramos Geopanda ya que permite cargar, manipular y analizar datos geoespaciales de diferenctes formatos, crear visualizaciones de mapas interactivos y agregar datos de ciclistas rutas de ciclsimo y puntos de interees, etc.
+https://geopandas.org/en/stable/docs.html
