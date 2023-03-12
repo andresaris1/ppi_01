@@ -9,6 +9,16 @@ Bike Citizens: Esta aplicación proporciona información detallada sobre las rut
 En general, estas herramientas aplicativas tienen características similares a una posible aplicación que se desarrolle para ciclistas y ciclo rutas, como la capacidad de planificar rutas, registrar el progreso y conectarse con otros usuarios. Sin embargo, una posible aplicación puede tener características únicas o personalizadas para satisfacer las necesidades específicas de los ciclistas y fomentar la utilización de rutas de bicicleta seguras y eficientes.
 
 
+sofware open source relacionados.
+
+OpenStreetMap: Esta plataforma de mapas es un proyecto colaborativo de código abierto que permite a los usuarios contribuir y editar datos geoespaciales. OpenStreetMap es una alternativa a Google Maps y otros servicios de mapas comerciales, y se centra en la creación de mapas precisos y detallados a nivel local. La plataforma es muy útil para los desarrolladores de aplicaciones que necesitan acceso a datos geoespaciales actualizados y precisos.
+
+GraphHopper: Es una solución de enrutamiento de código abierto que permite a los desarrolladores integrar la funcionalidad de enrutamiento en sus aplicaciones. GraphHopper es altamente personalizable y permite a los desarrolladores ajustar parámetros como el peso de la elevación, el tipo de transporte y el algoritmo de enrutamiento utilizado. La solución de enrutamiento es escalable y puede manejar grandes volúmenes de datos.
+
+Leaflet: Es una biblioteca de mapas de código abierto que se enfoca en la creación de mapas interactivos y personalizables en aplicaciones web. Leaflet es altamente modular y ofrece una amplia variedad de funciones, como zoom y desplazamiento suave, la capacidad de agregar marcadores y polígonos y la integración con servicios de mapas externos. La biblioteca es altamente personalizable y es compatible con una amplia variedad de navegadores y dispositivos.
+
+
+
 Librerias disponibles de python.
 
 Folium: Folium es una librería de Python que se utiliza para crear mapas interactivos. Permite crear mapas de todo el mundo, añadir marcadores y superponer información adicional. Es compatible con varias fuentes de datos como GeoJSON, TopoJSON, CSV y Pandas.
