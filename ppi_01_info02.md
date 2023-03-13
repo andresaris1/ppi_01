@@ -1,4 +1,4 @@
-### Informe 2 - pp1_01_info02
+# Informe 2 - pp1_01_info02
 
 
 ## Herramientas/aplicativos que pueden servir.
@@ -20,6 +20,7 @@ En general, estas herramientas aplicativas tienen características similares a u
 
 **Leaflet:** Es una biblioteca de mapas de código abierto que se enfoca en la creación de mapas interactivos y personalizables en aplicaciones web. Leaflet es altamente modular y ofrece una amplia variedad de funciones, como zoom y desplazamiento suave, la capacidad de agregar marcadores y polígonos y la integración con servicios de mapas externos. La biblioteca es altamente personalizable y es compatible con una amplia variedad de navegadores y dispositivos.
 
+**OSRM:** Es una plataforma de enrutamiento de código abierto que utiliza datos de OpenStreetMap para calcular rutas personalizadas para usuarios de ciudades de todo el mundo en tiempo real.
 
 
 ## Librerias disponibles de python.
@@ -29,6 +30,12 @@ En general, estas herramientas aplicativas tienen características similares a u
 **Folium:** Folium es una librería de Python que se utiliza para crear mapas interactivos. Permite crear mapas de todo el mundo, añadir marcadores y superponer información adicional. Es compatible con varias fuentes de datos como GeoJSON, TopoJSON, CSV y Pandas.
 
 **Geopandas:** Geopandas es una librería que permite trabajar con datos geoespaciales en Python. Es compatible con varios formatos de datos como GeoJSON, Shapefile y otros. Geopandas se integra bien con otras librerías como Matplotlib y Shapely. Permite cargar, manipular y analizar datos geoespaciales de diferentes formatos, crear visualizaciones de mapas interactivos y agregar datos de ciclistas rutas de ciclsimo y puntos de interés, etc.
+
+**Django:** Es un framework de desarrollo web que permite crear aplicaciones web siguiendo el modelo MVC (Modelo-Vista-Controlador). Cuenta con un ecosistema de herramientas que permite la creación completa de aplicaciones escalables y robustas.
+
+**Django Rest Framework:** Es una extensión de Python que permite crear aplicaciones web tipo API (Interfaz de Programación de Aplicaciones) de manera sencilla y eficiente, utilizando las convenciones RESTful y proporcionando un ecosistema de herramientas que permite manejar solicitudes y respuestas HTTP, autenticar usuarios y serializar datos.
+
+**GeoDjango:** Es una extensión de Django que añade soporte para trabajar con datos geoespaciales, como coordenadas y polígonos, mapas y demás elementos relacionados a la ubicación geográfica. Esta herramienta facilita la creación de aplicaciones web con funcionalidades de geolocalización, análisis geoespacial.
 
 **Bokeh:** Bokeh es una librería de visualización interactiva para Python que se utiliza para crear gráficos y mapas interactivos. Permite crear mapas interactivos, incluyendo mapas de Google Maps.
 
