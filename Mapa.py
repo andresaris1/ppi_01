@@ -17,7 +17,7 @@ municipios_valle = municipios_valle.reset_index()
 print(municipios_valle.head())
 
 # Crear mapa locacion, estilo, zoom
-m = folium.Map(location=[6.25 , -75.6], tiles='cartodbpositron', zoom_start=10)
+m = folium.Map(location=[6.2 , -75.5], tiles='cartodbpositron', zoom_start=10)
 
 for _, r in municipios_valle.iterrows():
     # Simplificar la tolerancia para que el mapa se muestre
@@ -30,4 +30,4 @@ for _, r in municipios_valle.iterrows():
     folium.Popup(r['MPIO_CNMBR']).add_to(geo_j) 
     # Agregar poligono al mapa
     geo_j.add_to(m)
-m.save('Mapa valle')
+m.save('mapaValle')
