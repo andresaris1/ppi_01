@@ -2,6 +2,7 @@
 ## informe 03: viernes 23 de marzo.
 
 - [ ]  Primera visualización de la página principal de la aplicación web con un mapa interactivo del Valle de Aburrá [(link a la rama)](https://github.com/andresaris1/ppi_01/tree/holaBiciMaps), en donde luego se tendrá una vista priliminar de todas las ciclo rutas del Valle de Aburrá.
+- [ ] Configuración del ambiente de trabajo para el desarrollo del back-end.
 - [ ] Creación de la funcionalidad en el back-end de registro de usuarios de la aplicación y recuperación de información de un usuario dado. Esto se hará mediante el uso de Django y Django Rest Framework.
 - [ ] Creación del modelo relacional que soportará la persistencia de datos de la aplicación en Postgres SQL.
 - [ ] Creación de los modelos de las tablas del modelo relacional en GeoDjango y migración a la base de datos.
