@@ -1,0 +1,21 @@
+version: "3.8"
+
+services:
+   api:
+      build:
+         context: .
+         dockerfile: Dockerfile.dev
+      command: python3 manage.py runserver
+      volumes:
+         - .:/app
+      ports:
+         - 8000:8000
+      restart: "on-failure"
+      networks:
+         - bicimaps-api
+      labels:
+          com.docker.compose.container-number : "1"
+networks:
+   bicimaps-api:
+      driver: bridge
+    
