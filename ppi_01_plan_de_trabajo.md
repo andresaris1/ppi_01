@@ -9,7 +9,10 @@
   
 
 ## informe 04: 13 horas del viernes 31 de marzo.
-
+En la entrega 04 se busca Diseñar e iniciar la creacion de una base de datos,
+- [  ] Obtencion de datos de ciclovias, puntos de enCicla y talleres
+- [  ] Incersion y limpieza de los datos
+- [  ] Obtencion e integracion de la api de enCicla para conocer disponibilidad de bicicletas de cada estacion
 
 ## informe 05: 13 horas del viernes 14 de abril.
 - Implementación de la funcionalidad en el back-end de enrutamiento: Cuando un usuario  decida ir a un lugar específico en el Valle de Aburrá se permitirá obtener la ruta óptima según OSRM (Open Source Routing Machine) para ir a dicha ruta, mediante un archivo tipo GeoJSON. Se guardarán dichas rutas en el historial del usuario.
