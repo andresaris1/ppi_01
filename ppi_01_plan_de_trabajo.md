@@ -1,5 +1,5 @@
 # Plan de trabajo
-## informe 03: viernes 23 de marzo.
+## informe 03: viernes 24 de marzo.
 
 - [ ]  Primera visualización de la página principal de la aplicación web con un mapa interactivo del Valle de Aburrá [(link a la rama)](https://github.com/andresaris1/ppi_01/tree/holaBiciMaps), en donde luego se tendrá una vista priliminar de todas las ciclo rutas del Valle de Aburrá.
 - [ ] Configuración del ambiente de trabajo para el desarrollo del back-end.
