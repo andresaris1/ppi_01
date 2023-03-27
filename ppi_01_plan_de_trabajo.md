@@ -46,10 +46,10 @@ En la entrega 09 ya tendríamos casi todo terminado desde el lado del usuario fi
 - [ ] Mejoras con el feedback de las entregas
 - [ ] Funcionalidades avanzadas para usuarios registrados: Permitir hacer reseñas en las rutas y ver reseñas de otros usuarios para ciertos puntos y rutas ...
 - [ ] Avisos y alertas acerca de las rutas, permitir almacenar feedback de usuarios.
+- [ ] Pruebas y resultados de la aplicacion.
+- [ ] descripcion general de lo que puede hacer la app y cuales son sus limitantes.
+- [ ] descripccion de requerimientos minimos para el uso de la aplicacion para su correcto funcionamiento.
 
 ## informe 10: 13 horas del viernes 26 de mayo.
 En la entrega 10 se revisara funcionalidad y correcto funcionamiento para el usuario.
-- [ ] Pruebas y resultados de la aplicacion.
-- [ ] descripcion general de lo que puede hacer la app y cuales son sus limitantes.
 - [ ] Correccion de errores de la app presentados en las pruebas.
-- [ ] descripccion de requerimientos minimos para el uso de la aplicacion para su correcto funcionamiento.
