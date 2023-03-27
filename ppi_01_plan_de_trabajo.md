@@ -11,17 +11,17 @@
 
 ## informe 04: 13 horas del viernes 31 de marzo.
 En la entrega 04 se busca Diseñar e iniciar la creacion de una base de datos,
-- [ ] Obtencion de datos de ciclovias, puntos de enCicla y talleres
-- [ ] Incersion y limpieza de los datos
-- [ ] Obtencion e integracion de la api de enCicla para conocer disponibilidad de bicicletas de cada estacion
+- [ ] Obtención de datos de ciclovias, puntos de EnCicla y talleres
+- [ ] Inserción y limpieza de los datos
+- [ ] Obtención e integración de la API de EnCicla para conocer disponibilidad de bicicletas de cada estación.
 
 ## informe 05: 13 horas del viernes 14 de abril.
-- [ ] Implementación de la funcionalidad en el back-end de enrutamiento: Cuando un usuario  decida ir a un lugar específico en el Valle de Aburrá se permitirá obtener la ruta óptima según OSRM (Open Source Routing Machine) para ir a dicha ruta, mediante un archivo tipo GeoJSON. Se guardarán dichas rutas en el historial del usuario.
+- [ ] Implementación de la funcionalidad en el back-end de enrutamiento: cuando un usuario  decida ir a un lugar específico en el Valle de Aburrá se permitirá obtener la ruta óptima según OSRM (Open Source Routing Machine) para ir a dicha ruta, mediante un archivo tipo GeoJSON. Se guardarán dichas rutas en el historial del usuario.
   
   
 
 ## informe 06: 13 horas del viernes 21 de abril.
-- [ ] Desplegue completo de la RESTfull API (back-end)
+- [ ] Despliegue completo de la RESTfull API (back-end)
 - [ ] Configuración del ambiente de trabajo para el frontend 
   
   
@@ -46,9 +46,9 @@ En la entrega 09 ya tendríamos casi todo terminado desde el lado del usuario fi
 - [ ] Mejoras con el feedback de las entregas
 - [ ] Funcionalidades avanzadas para usuarios registrados: Permitir hacer reseñas en las rutas y ver reseñas de otros usuarios para ciertos puntos y rutas ...
 - [ ] Avisos y alertas acerca de las rutas, permitir almacenar feedback de usuarios.
-- [ ] Pruebas y resultados de la aplicacion.
-- [ ] descripcion general de lo que puede hacer la app y cuales son sus limitantes.
-- [ ] descripccion de requerimientos minimos para el uso de la aplicacion para su correcto funcionamiento.
+- [ ] Pruebas y resultados de la aplicación.
+- [ ] Descripción general de lo que puede hacer la app y cuales son sus limitantes.
+- [ ] Descripción de requerimientos mínimos para el uso de la aplicación para su correcto funcionamiento.
 
 ## informe 10: 13 horas del viernes 26 de mayo.
 En la entrega 10 se revisara funcionalidad y correcto funcionamiento para el usuario.
