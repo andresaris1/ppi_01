@@ -38,7 +38,7 @@ En la entrega 08 se planea ya tener desplegado en la aplicación para el cliente
 - [ ] Acceso a funcionalidades básicas de la aplicación sin registro (público en general)
 - [ ] Marcar la ruta para ir de un destino a otro.
 - [ ] Marcadores de sitios importantes en el mapa (Estaciones encicla, talleres ...)
-- [ ] Visualización de las estaciones de encicla
+- [ ] Visualización de las estaciones de EnCicla
 
 ## informe 09: 13 horas del viernes 12 de mayo.
 En la entrega 09 ya tendríamos casi todo terminado desde el lado del usuario final.
@@ -52,4 +52,4 @@ En la entrega 09 ya tendríamos casi todo terminado desde el lado del usuario fi
 
 ## informe 10: 13 horas del viernes 26 de mayo.
 En la entrega 10 se revisara funcionalidad y correcto funcionamiento para el usuario.
-- [ ] Correccion de errores de la app presentados en las pruebas.
+- [ ] Corrección de errores de la app presentados en las pruebas.
