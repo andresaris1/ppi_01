@@ -53,3 +53,4 @@ En la entrega 09 ya tendríamos casi todo terminado desde el lado del usuario fi
 ## informe 10: 13 horas del viernes 26 de mayo.
 En la entrega 10 se revisara funcionalidad y correcto funcionamiento para el usuario.
 - [ ] Corrección de errores de la app presentados en las pruebas.
+- [ ] Entrega final.
