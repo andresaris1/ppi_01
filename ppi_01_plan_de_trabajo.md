@@ -1,13 +1,20 @@
 # Plan de trabajo
 ## informe 03: viernes 24 de marzo.
 
-- [ ]  Primera visualización de la página principal de la aplicación web con un mapa interactivo del Valle de Aburrá [(link a la rama)](https://github.com/andresaris1/ppi_01/tree/holaBiciMaps), en donde luego se tendrá una vista priliminar de todas las ciclo rutas del Valle de Aburrá
+- [ ]  Primera visualización de la página principal de la aplicación web [frontend bicimaps](https://judhenaoma.github.io/ppi-01/#) con un mapa interactivo del Valle de Aburrá , en donde luego se tendrá una vista priliminar de todas las ciclo rutas del Valle de Aburrá
 - [ ] Configuración del ambiente de trabajo para el desarrollo del back-end
-- [ ] Creación de la funcionalidad en el back-end de registro de usuarios de la aplicación y recuperación de información de un usuario dado. Esto se hará mediante el uso de Django y Django Rest Framework
+- [ ] Creación de la funcionalidad en el back-end de registro de usuarios de la aplicación, logeo y recuperación de información de un usuario dado. Esto se hará mediante el uso de Django y Django Rest Framework
+- Para visualizar las funcionalidades listadas anteriormente ingresar a este link [backend bicimaps](https://bicimaps.herokuapp.com/api/login/). En donde se tienen los siguientes end-points:
+    - Registrarse: https://bicimaps.herokuapp.com/api/sign-up/
+
+    - Logearse: https://bicimaps.herokuapp.com/api/login/
+
+    - Ver info del usuario logeado : https://bicimaps.herokuapp.com/api/user-detail/
+    
 - [ ] Creación del modelo relacional que soportará la persistencia de datos de la aplicación en Postgres SQL
 - [ ] Creación de los modelos de las tablas del modelo relacional en GeoDjango y migración a la base de datos
 - [ ] Integración del backend preliminar con la base de datos de la aplicación.
-  
+
 
 ## informe 04: 13 horas del viernes 31 de marzo.
 En la entrega 04 se busca Diseñar e iniciar la creacion de una base de datos,
