@@ -1,0 +1,5 @@
+Registrarse: https://bicimaps.herokuapp.com/api/sign-up/
+
+Logearse: https://bicimaps.herokuapp.com/api/login/
+
+Ver info del usuario logeado : https://bicimaps.herokuapp.com/api/user-detail/
