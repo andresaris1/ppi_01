@@ -35,11 +35,29 @@ header ul{
 header ul li{
     list-style: none;
 }
+
+ /* Formato de la barra de navegación*/
 header ul li a{
     display: inline-block;
     color: #002147;
     font-weight: 400;
     margin-left: 40px;
+    text-decoration: none;
+}
+
+ /* Formato del boton de login*/
+header ul li .bt_login{
+    display: inline-block;
+    color: #fff;
+    width: 100px;
+    height: 40px;
+    background: cadetblue;
+    border: 2px solid #fff;
+    outline: none;
+    border-radius: 6px;
+    font-weight: 600;
+    margin-left: 40px;
+    margin-top: -25px;
     text-decoration: none;
 }
 
@@ -90,6 +108,7 @@ header ul li a{
     font-weight: 600;
 }
 
+ /* Formato del mapa dentro de la página*/
 .content .mapa {
     width: 600px;
     height: 500px;
