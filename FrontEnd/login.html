@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BiciMaps 🚲</title> <! Titulo ventana>
+    <link rel="stylesheet" href="style.css"> <! Agregar hoja de estilos>
+</head>
+<body>
+    <! Creacion de la sección de la barra de navegación>
+    <section>
+        <header>
+            <a href="#" class="logo" "><img src="logo.png" width="20%"></a>
+            <ul>
+                <li><a href='index.html'>Inicio</a></li>
+                <li><a href='https://github.com/andresaris1/ppi_01'>Repositorio</a></li>
+                <li><a href='#'>Contacto</a></li>
+                <li><button class="bt_login" href='login.html'>Ingresar</button></li>
+            </ul>
+        </header>
+
+    <div class="wrapper">
+        <div class="form_box login"> 
+            <h2>Ingresar</h2>
+            <form action="#">
+                <div class="input_box">
+                    <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
+                    <input type="Email" required>
+                    <label> Email</label>
+                </div>
+
+                <div class="input_box">
+                    <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                    <input type="Contraseña" required>
+                    <label> Contraseña</label>
+                </div>
+
+                <div class="recordar-olvido">
+                    <label><input type="checkbox"> Recordar la contraseña</label>
+                    <a href="#">Olvidaste la contraseña?</a>
+                </div>
+
+                <button type="submit" class="btn">Ingresar</button>
+
+            </form>
+        </div>
+    </div>
+</body>
+
+<! script para los iconos del login form >
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</html>
