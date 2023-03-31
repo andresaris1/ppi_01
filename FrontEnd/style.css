@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Poppins: 200,300,400,500,600,700);
+@import url(https://fonts.googleapis.com/css?family=Poppins: ),300,400,500,600,700);
 *
 {
     margin: 0;
@@ -45,8 +45,19 @@ header ul li a{
     text-decoration: none;
 }
 
+header ul li::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 2px;
+    background: cadetblue;
+    border-radius: 6px;
+}
+
  /* Formato del boton de login*/
-header ul li .bt_login{
+header ul li .bt_login {
     display: inline-block;
     color: #fff;
     width: 100px;
@@ -59,6 +70,12 @@ header ul li .bt_login{
     margin-left: 40px;
     margin-top: -25px;
     text-decoration: none;
+    transition: .5s;
+}
+
+header ul li .bt_login:hover {
+    background: #002147;
+    color: #fff;
 }
 
 .content{
@@ -166,12 +183,13 @@ header ul li .bt_login{
     color: #002147;
     font-weight: 500;
     pointer-events: none;
+    transition: .5s;
 }
 
 /* Formato para cuando enfoque la casilla */
 .input_box input:focus~label,
 .input_box input:valid~label {
-    top: -5px
+    top: -5px;
 }
 
 /* Formato de la caja de entrada */
@@ -181,6 +199,12 @@ header ul li .bt_login{
     background: transparent;
     border: none;
     outline: none;
+    font-size: 1em;
+    color: #002147;
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+    
+
 }
 
 /* Formato de los iconos */
