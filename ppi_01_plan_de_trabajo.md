@@ -17,9 +17,13 @@
 
 
 ## informe 04: 13 horas del viernes 31 de marzo.
-En la entrega 04 se busca Diseñar e iniciar la creacion de una base de datos,
-- [ ] Obtención de datos de ciclovias, puntos de EnCicla y talleres
-- [ ] Inserción y limpieza de los datos
+En la entrega 04 se busca diseñar e iniciar la creacion de una base de datos, en conjunto con una RESTfull API que soportará las siguientes funcionalidades:
+- [ ] Funcionalidad para obtención de datos de ciclovias mediante la API
+- [ ] Limpieza y depurado de las capas usadas en la aplicación (ciclovías, etc.)
+- [ ] Funcionalidad para creación de las reseñas por los usuarios mediante la API
+- [ ] Funcionalidad para obtención de las reseñas de todos los usuarios mediante la API
+- [ ] Funcionalidad para creación de rutas de un usuario mediante la API
+- [ ] Funcionalidad para creación de rutas de un usuario mediante la API
 - [ ] Obtención e integración de la API de EnCicla para conocer disponibilidad de bicicletas de cada estación.
 
 ## informe 05: 13 horas del viernes 14 de abril.
