@@ -14,7 +14,7 @@ No solo queremos ser una aplicación de movilidad, si no a la larga poder constr
 + [Main de la aplicación](https://judhenaoma.github.io/ppi-01/#)
 + [Backend - Autenticacion](https://bicimaps.herokuapp.com/api/login/)
 + [Backend - Registro]( https://bicimaps.herokuapp.com/api/sign-up/)
-+ [Backend - Ver información de usuario] (https://bicimaps.herokuapp.com/api/user-detail/)
++ [Backend - Ver información de usuario](https://bicimaps.herokuapp.com/api/user-detail/)
 
 
 ### Tipo de licencia
