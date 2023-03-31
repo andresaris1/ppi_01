@@ -10,6 +10,12 @@ La idea surge en crear una aplicación web con las bases de datos disponibles ac
 
 No solo queremos ser una aplicación de movilidad, si no a la larga poder construir una comunidad; en la que la gente pueda encontrar comentarios acerca de las rutas, al igual que recomendaciones en cuanto a locales de interés (Talleres, accesorios y demás.)
 
+### Enlaces desplegables
++ [Main de la aplicación](https://judhenaoma.github.io/ppi-01/#)
++ [Backend - Autenticacion](https://bicimaps.herokuapp.com/api/login/)
++ [Backend - Registro]( https://bicimaps.herokuapp.com/api/sign-up/)
++ [Backend - Ver información de usuario] (https://bicimaps.herokuapp.com/api/user-detail/)
+
 
 ### Tipo de licencia
 Licencia Pública General de GNU (GPL) versión 3
