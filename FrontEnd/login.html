@@ -12,36 +12,36 @@
     <section>
         <header>
             <a href="#" class="logo" "><img src="logo.png" width="20%"></a>
-            <ul>
-                <li><a href='index.html'>Inicio</a></li>
-                <li><a href='https://github.com/andresaris1/ppi_01'>Repositorio</a></li>
-                <li><a href='#'>Contacto</a></li>
-                <li><button class="bt_login" onclick="location.href='login.html';">Ingresar</button></li>
-            </ul>
+            <nav class="navBar">
+                <a href="#"> Inicio </a>
+                <a href="#"> Mapa </a>
+                <a href="#"> Repositorio </a>
+                <button class="loginBtn">Ingresar 🚲</button>
+              </nav>
         </header>
 
     <div class="wrapper">
         <div class="form_box login"> 
-            <h2>Ingresar</h2>
+            <h2>Bienvenid@</h2>
             <form action="#">
                 <div class="input_box">
                     <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
-                    <input type="Email" required>
+                    <input type="text" required>
                     <label> Email</label>
                 </div>
 
                 <div class="input_box">
                     <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
-                    <input type="Contraseña" required>
+                    <input type="password" required>
                     <label> Contraseña</label>
                 </div>
-                
-                <div class="recordar-olvido">
-                    <label><input type="checkbox"> Recordar la contraseña</label>
+
+                <div class="recordarCuenta">
+                    <label><input type="checkbox"> Recordarme</label>
                     <a href="#">Olvidaste la contraseña?</a>
                 </div>
 
-                <button type="submit" class="btn">Ingresar</button>
+                <button type="submit" class="btn-ing">Ingresar</button>
 
             </form>
         </div>
