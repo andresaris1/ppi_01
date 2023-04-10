@@ -18,13 +18,28 @@
 
 ## informe 04: 13 horas del viernes 31 de marzo.
 En la entrega 04 se busca diseñar e iniciar la creacion de una base de datos, en conjunto con una RESTfull API que soportará las siguientes funcionalidades:
-- [ ] Funcionalidad para obtención de datos de ciclovias mediante la API
 - [ ] Limpieza y depurado de las capas usadas en la aplicación (ciclovías, etc.)
 - [ ] Funcionalidad para creación de las reseñas por los usuarios mediante la API
 - [ ] Funcionalidad para obtención de las reseñas de todos los usuarios mediante la API
 - [ ] Funcionalidad para creación de rutas de un usuario mediante la API
 - [ ] Funcionalidad para creación de rutas de un usuario mediante la API
 - [ ] Obtención e integración de la API de EnCicla para conocer disponibilidad de bicicletas de cada estación.
+
+End-points creados hasta el momento en la API:
+- Registrarse: https://bicimaps.herokuapp.com/api/sign-up/
+
+- Logearse: https://bicimaps.herokuapp.com/api/login/
+
+- Ver info del usuario logeado : https://bicimaps.herokuapp.com/api/user-detail/
+
+- Crear una reseña por un usuario: https://bicimaps.herokuapp.com/api/create-review/
+
+- Recuperar todas las reseñas realizadas en la aplicación: https://bicimaps.herokuapp.com/api/reviews/
+
+- Crear una ruta por un usuario autenticado:
+https://bicimaps.herokuapp.com/api/create-route/
+
+- Crear una ciclovía por un usuario admin: https://bicimaps.herokuapp.com/api/create-bike-way/
 
 ## informe 05: 13 horas del viernes 14 de abril.
 - [ ] Implementación de la funcionalidad en el back-end de enrutamiento: cuando un usuario  decida ir a un lugar específico en el Valle de Aburrá se permitirá obtener la ruta óptima según OSRM (Open Source Routing Machine) para ir a dicha ruta, mediante un archivo tipo GeoJSON. Se guardarán dichas rutas en el historial del usuario.
