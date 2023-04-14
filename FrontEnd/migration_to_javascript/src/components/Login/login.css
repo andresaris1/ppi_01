@@ -1,0 +1,289 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+section{
+    position: relative;
+    width: 100%;
+    min-height: 100%;
+    padding: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+}
+
+
+header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+ /* Formato de la barra de navegación*/
+ .navBar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: -40px;
+ }
+  
+   /* Titulos */
+  .navBar a {
+    position: relative;
+    color: #002147;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 500;
+    display: inline-block;
+    margin-left: 0px;
+    padding: 10px 30px;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  /* Animación cursor arriba */
+  .navBar a:hover {
+    color: cadetblue;
+  }
+
+   /* Animación cursor arriba punto */
+  .navBar a::after {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: #002147;
+    border-radius: 50%;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  /* Animación del punto */
+  .navBar a:hover::after {
+    opacity: 1;
+    bottom: -1px;
+  }
+
+  /* Estilos del boton de Login */
+  .navBar .loginBtn {
+    width: 130px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid #002147;
+    border-radius: 7px;
+    font-size: 1.2em;
+    margin-left: auto;
+    cursor: pointer;
+    font-weight: 500;
+    transition: .6s;
+
+  }
+
+  /* Animacióm boton login cursor arriba */
+  .navBar .loginBtn:hover {
+    background: #002147;
+    color: #fff;
+
+  }
+
+ 
+.content{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 300px;
+    align-items: center;
+    margin-left: 50px;
+}
+
+.content .textBox {
+    max-width: 600px;
+    position: relative;
+    line-height: 1.2em;
+    padding: 5px;
+}
+
+.content .textBox h2 {
+    color: #002147;
+    font-size: 3.7em;
+    line-height: 1.2em;
+    font-weight: 500;
+}
+
+.content .textBox span {
+    color: cadetblue;
+    font-size: 1.4em;
+    font-weight: 700;
+}
+
+.content .textBox p {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 8px 20px;
+}
+
+.content .textBox a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 8px 20px;
+    background-color: cadetblue;
+    color: #fff;
+    border-radius: 40px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+ /* Formato del mapa dentro de la página*/
+.content .mapa {
+    width: 600px;
+    height: 500px;
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 50px;
+    padding-right: 50px;
+}
+
+ /* Formato del wrapper de la cajas de login signup*/
+.wrapper {
+    position: relative;
+    width: 70vw;
+    height: 40vw;
+    background: transparent;
+    border: 2px solid rgba( 255, 255, 255, .5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ /* Formato del wrapper de la caja del login*/
+ .wrapper .form_box {
+    width: 100%;
+    padding: 80px;
+    justify-content: space-around;
+ }
+
+ /* Formato del wrapper del titulo ingresar*/
+ .form_box h2 {
+    font-size: 2em;
+    color: cadetblue;
+    text-align: center;
+ }
+
+ /* Formato de la caja para ingresar texto*/
+ .input_box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 1px solid cadetblue;
+    margin: 30px 0;
+    display: flex;
+    justify-content: space-between;
+ }
+
+ /* Etiquetas de la caja de entrada */
+ .input_box label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: #002147;
+    font-weight: 500;
+    pointer-events: none;
+    transition: .5s;
+ }
+
+ /* Formato para cuando enfoque la casilla */
+ .input_box input:focus~label,
+ .input_box input:valid~label {
+    top: -5px
+ }
+
+ /* Formato de la caja de entrada */
+ .input_box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+
+ }
+
+/* Formato de los iconos */
+.input_box .icon {
+    position: absolute;
+    right: 8px;
+    font-size: 1.3em;
+    color: #002147;
+    line-height: 57px;
+
+}
+
+/* Formato para el olvide mi contraseña */
+.recordarCuenta {
+    font-size: 0.8em;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Etiqueta recuerdame */
+.recordarCuenta label input {
+    accent-color: #002147;
+    margin-right: 3px;
+}
+
+/* Etiqueta olvide mi contraseña */
+.recordarCuenta a {
+    text-decoration: none;
+    color: #002147;
+}
+
+.btn-ing {
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+    margin-top: 20px;
+    background: #002147;
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #fff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+/* Caja de pregunta si tiene bicicleta */
+.bici{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.bici legend {
+    font-size: 1em;
+    color: #002147;
+    font-weight: 500;
+    pointer-events: none;
+ }
+
