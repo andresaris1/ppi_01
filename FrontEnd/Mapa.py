@@ -48,8 +48,7 @@ for estacion in range(len(df)):
             <td style="width: 150px;background-color: """+ right_col_color +""";">{}</td>""".format(tipo) + """
             </tr>
             <tr>
-            <td style="backgr
-            ound-color: """+ left_col_color +""";"><span style="color: #ffffff;">Cantidad de Anclajes</span></td>
+            <td style="background-color: """+ left_col_color +""";"><span style="color: #ffffff;">Cantidad de Anclajes</span></td>
             <td style="width: 150px;background-color: """+ right_col_color +""";">{}</td>""".format(anclajes) + """
             </tr>
             </tbody>
