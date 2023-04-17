@@ -172,6 +172,16 @@ header{
     align-items: center;
 }
 
+.wrapper::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(-45deg, #002147, cadetblue);
+    z-index: 6;
+}
+
  /* Formato del wrapper de la caja del login*/
  .wrapper .form_box {
     width: 100%;

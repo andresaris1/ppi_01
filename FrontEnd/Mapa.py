@@ -3,7 +3,7 @@ import folium
 import geopandas as gpd
 
 # Leer la base de datos
-municipios = gpd.read_file("/Users/marianahernandez/biciMaps/MunicipiosVeredas.json")
+municipios = gpd.read_file("/Users/marianahernandez/biciMaps/FrontEnd/MunicipiosVeredas.json")
 # Realizar una copia para agregar index
 municipios_index = municipios.copy()
 municipios_index = municipios_index.set_index("MPIO_CNMBR")
