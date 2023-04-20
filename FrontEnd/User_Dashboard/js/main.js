@@ -1,3 +1,4 @@
+// ============================== SIDE BAR ============================================
 // Add hover class to the select list item
 let list = document.querySelectorAll(".navigation li");
 
@@ -22,7 +23,7 @@ toggle.onclick = function(){
 }
 
 
-// ============================== APP CLIMA ================
+// ============================== APP CLIMA ========================================================
 
 const container = document.querySelector('.container_clima');
 const search = document.querySelector('.search_box button');
@@ -109,3 +110,12 @@ search.addEventListener('click', () => {
 
 
 })
+
+
+// ============================== MAPA CON GOOGLE API ============================================
+const map = L.map('map').setView([51.505, -0.09], 13);
+
+	const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+		maxZoom: 19,
+		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+	}).addTo(map);

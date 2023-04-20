@@ -5,9 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Usuario Registrado 🚲</title>
+
     <! ======= Styles =========================== > 
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+
     <link rel="stylesheet" href="css/dash_style.css">
-    <div class="container">
 </head>
 <body>
     <! ============================ Navigation Side Bar =========================== > 
@@ -52,7 +55,58 @@
             </li>
 
         </ul>
+
+        <! ============ Clima ============================== >
+        <div class="container_clima">
+            
+            <div class="search_box">
+                <span class="icon">
+                    <ion-icon name="location-outline"></ion-icon>
+                </span>
+                <input type="text" placeholder="Ingresa tu ubicación">
+                <button>
+                    <ion-icon name="search-outline"></ion-icon>
+                </button>
+            </div>
+    
+            <div class="not_found">
+                <img src="img/404_notFound.png" alt="Error 404">
+                <p>Upssss! No encontramos esa ubicación :\ </p>
+            </div>
+    
+            <div class="weather-box">
+                <img src="" >
+                <p class="temperature"></p>
+                <p class="description"></p>
+            </div>
+    
+            <div class="weather-details">
+                <div class="humidity">
+                    <span>
+                        <ion-icon name="water-outline"></ion-icon>
+                    </span>
+                    <div class="text">
+                        <span></span>
+                        <p>Humedad</p>
+                    </div>
+    
+                    <div class="wind">
+                        <span>
+                            <ion-icon name="leaf-outline"></ion-icon>
+                        </span>
+                        <div class="text">
+                            <span></span>
+                            <p>Viento</p>
+                        </div>
+    
+                </div>
+            </div>
+    
+        </div>
+    
+        </div>
     </div>
+
 
     <! ============ Main ============================== >
     <div class="main">
@@ -64,7 +118,7 @@
             </div>
 
             <! ==== Barra de busqueda navegar ==== >
-            <div class="search">
+            <div class="search_destination">
                 <label>
                     <input type="text" placeholder="¿A dónde vamos?">
                     <ion-icon name="navigate-outline"></ion-icon>
@@ -73,61 +127,18 @@
 
         </div>
 
-        <! ============ Clima ============================== >
-    <div class="container_clima">
-        
-        <div class="search_box">
-            <span class="icon">
-                <ion-icon name="location-outline"></ion-icon>
-            </span>
-            <input type="text" placeholder="Ingresa tu ubicación">
-            <button>
-                <ion-icon name="search-outline"></ion-icon>
-            </button>
-        </div>
 
-        <div class="not_found">
-            <img src="img/404_notFound.png" alt="Error 404">
-            <p>Upssss! No encontramos esa ubicación :\ </p>
-        </div>
-
-        <div class="weather-box">
-            <img src="" >
-            <p class="temperature"></p>
-            <p class="description"></p>
-        </div>
-
-        <div class="weather-details">
-            <div class="humidity">
-                <span>
-                    <ion-icon name="water-outline"></ion-icon>
-                </span>
-                <div class="text">
-                    <span></span>
-                    <p>Humedad</p>
-                </div>
-
-                <div class="wind">
-                    <span>
-                        <ion-icon name="leaf-outline"></ion-icon>
-                    </span>
-                    <div class="text">
-                        <span></span>
-                        <p>Viento</p>
-                    </div>
-
-            </div>
-        </div>
-
-    </div>
-
-    </div>
+    <div id="map" 
+    style="width: 1400px; height: 700px;
+    margin-top: -10px;
+    z-index: 0;"></div>
 
 
 
    </div>
 
    <! ============== Scripts =========================== > 
+
    <script src="js/main.js"></script>
 
 
@@ -136,6 +147,7 @@
 
    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+   
 
     
 </body>
