@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuario Registrado 🚲</title>
+    <! ======= Styles =========================== > 
+    <link rel="stylesheet" href="css/dash_style.css">
+    <div class="container">
+</head>
+<body>
+    <! ============================ Navigation Side Bar =========================== > 
+   <div class="container">
+    <div class="navigation">
+        <ul>
+
+            <li>
+                <a href="#">
+                    <span class="icon">
+                        <ion-icon name="bicycle-outline"></ion-icon>
+                        </span>
+                    <span class="title"> BiciMaps</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    <span class="icon">
+                        <ion-icon name="home-outline"> </ion-icon> 
+                         </span>
+                    <span class="title"> Inicio</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    <span class="icon">
+                        <ion-icon name="person-circle-outline"></ion-icon>
+                        </span>
+                    <span class="title"> Mi perfil </span>
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    <span class="icon"> 
+                        <ion-icon name="exit-outline"></ion-icon>
+                    </span>
+                    <span class="title"> Cerrar sesión </span>
+                </a>
+            </li>
+
+        </ul>
+    </div>
+
+    <! ============ Main ============================== >
+    <div class="main">
+        <div class="topBar">
+            <div class="toggle">
+                <ion-icon name="list-outline"></ion-icon>
+            </div>
+        </div>
+
+        <! ============ Clima ============================== >
+    <div class="container_clima">
+        
+        <div class="search_box">
+            <span class="icon">
+                <ion-icon name="location-outline"></ion-icon>
+            </span>
+            <input type="text" placeholder="Ingresa tu ubicación">
+            <button>
+                <ion-icon name="search-outline"></ion-icon>
+            </button>
+        </div>
+
+        <div class="not_found">
+            <img src="img/404_notFound.png" alt="Error 404">
+            <p>Upssss! No encontramos esa ubicación :\ </p>
+        </div>
+
+        <div class="weather-box">
+            <img src="" >
+            <p class="temperature"></p>
+            <p class="description"></p>
+        </div>
+
+        <div class="weather-details">
+            <div class="humidity">
+                <span>
+                    <ion-icon name="water-outline"></ion-icon>
+                </span>
+                <div class="text">
+                    <span></span>
+                    <p>Humedad</p>
+                </div>
+
+                <div class="wind">
+                    <span>
+                        <ion-icon name="leaf-outline"></ion-icon>
+                    </span>
+                    <div class="text">
+                        <span></span>
+                        <p>Viento</p>
+                    </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    </div>
+
+
+
+   </div>
+
+   <! ============== Scripts =========================== > 
+   <script src="js/main.js"></script>
+
+
+
+   <! ============== ION ICONS IMPORT =========================== > 
+
+   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    
+</body>
+</html>

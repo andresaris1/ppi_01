@@ -1,0 +1,359 @@
+/* ========== Importar la fuente (Google Fonts) ========= */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* ========== Global Settings ========= */
+* {
+    font-family: "Poppins";
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ========== Cuerpo de la pagina ========= */
+body{
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.container{
+    position: relative;
+    width: 100%;
+}
+
+/* ========== Barra de navegacion lateral ========= */
+.navigation{
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    background-color: #002147;
+    border-left: 10px solid cadetblue;
+    transition: .10s;
+    overflow: hidden;
+}
+
+.navigation.active{
+    width: 80px;
+}
+
+/* ==== Botones nav bar === */
+.navigation ul{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.navigation ul li{
+    position: relative;
+    width: 100%;
+    list-style: none;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+}
+
+/* Animacion cursor arriba */
+.navigation ul li:hover,
+.navigation ul li.hovered{
+    background-color: white;
+}
+
+/* ==== Primer item (Nombre app) === */
+.navigation ul li:nth-child(1){
+    margin-bottom: 40px;
+    pointer-events: none;
+    font-weight: 600;
+}
+
+
+/* ==== Texto de la barra de navegacion === */
+.navigation ul li a{
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    color: white;
+    text-decoration: none;
+}
+
+.navigation ul li:hover a,
+.navigation ul li.hovered a {
+    color: #002147;
+}
+
+.navigation ul li a .icon{
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 75px;
+    text-align: center;
+}
+
+.navigation ul li a .icon ion-icon{
+    font-size: 1.75rem;
+}
+
+.navigation ul li a .title{
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    text-align: start;
+    white-space: nowrap;
+}
+
+/* ==== Efecto curva afuera nav bar=== */
+/* Efecto arriba */
+.navigation ul li:hover a::before,
+.navigation ul li.hovered a::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: -50px;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 35px 35px 0 10px white;
+    pointer-events: none;
+}
+
+/* Efecto abajo */
+.navigation ul li:hover a::after,
+.navigation ul li.hovered a::after{
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: -50px;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 35px -35px 0 10px white;
+    pointer-events: none;
+}
+
+/* ========== Main ========= */
+.main {
+    position: absolute;
+    width: calc(100% - 300px);
+    left: 300px;
+    min-height: 100vh;
+    background: white;
+    transition: 0.5s;
+}
+
+.main.active{
+    width: calc(100% - 80px);
+    left: 80px;
+    transition: 0.5s;
+}
+
+
+/* ========== Top bar ========= */
+.toggle{
+    position: relative;
+    top: 0;
+    width: 60px;
+    height: 60px;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+
+
+/* ========== CLIMA ========= */
+.container_clima{
+    position: relative;
+    width: 400px;
+    height: 105px;
+    justify-content: center;
+    align-items: center;
+    padding: 28px 32px ;
+    overflow: hidden;
+    background-color: #002147;
+    border-radius: 18px;
+    transition: 0.6s ease-out;
+    margin-left: 200px;
+}
+
+
+/* Caja busqueda */
+.search_box{
+    width: 100%;
+    height: min-content;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.search_box input{
+    color: #002147;
+    width: 80%;
+    font-size: 24px;
+    font-weight: 400;
+    padding-left: 22px;
+    border-radius: 40px;
+}
+
+.search_box input::placeholder{
+    font-size: 20px;
+    color: #002147;
+    font-weight: 400;
+}
+
+.search_box button{
+    cursor: pointer;
+    margin-left: 6px;
+    width: 40px;
+    height: 40px;
+    background-color: #002147;
+    color: cadetblue;
+    border-radius: 50%;
+    font-size: 20px;
+    transition: 0.4s ease;
+}
+
+.search_box button:hover{
+    background-color: white;
+    color: #002147;
+}
+
+
+.search_box .icon ion-icon {
+    margin-right: 3px;
+    margin-top: 2px;
+    color: white;
+    font-size: 30px;
+}
+
+
+
+/* ========== CAJA CLIMA ========= */
+.weather-box{
+    text-align: center;
+}
+
+
+/* ========== Not found ========= */
+.not_found{
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+    opacity: 0;
+    scale: 0;
+    display: none;
+}
+
+.not_found img{
+    width: 80%;
+    margin-top: 0px;
+}
+
+.not_found p{
+    margin-top: -50px;
+    color: white;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+/* == Imagen ========= */
+.weather-box img{
+    width: 70%;
+    margin-top: 30px;
+}
+
+/* == Contenido ========= */
+.weather-box .temperature{
+    position: relative;
+    color: white;
+    font-size: 4rem;
+    font-weight: 800;
+    margin-top: -10px;
+    margin-left: -16px;
+}
+
+.weather-box .temperature span{
+    position: absolute;
+    margin-left: 4px;
+    font-size: 1.5rem;
+}
+
+.weather-box .description{
+    color: white;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+
+/* == Humedad y viento ========= */
+.weather-details{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.weather-details .humidity, .weather-details .wind{
+    display: flex;
+    align-items: center;
+    width: 60%;
+    height: 100px;
+    justify-content: space-between;
+    padding: 60px;
+}
+
+.weather-details .humidity{
+    padding-left: 20px;
+    justify-content: flex-start;
+}
+
+.weather-details .wind{
+    padding-right: 50px;
+}
+
+.weather-details ion-icon{
+    color: white;
+    font-size: 26px;
+    margin-right: 10px;
+    margin-top: 6px;
+}
+
+.weather-details .text{
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.weather-box, .weather-details{
+    scale: 0;
+    opacity: 0;
+}
+
+.weather-details span{
+    color: white;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.weather-details p{
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.fadeIn{
+    animation: 0.5s fadeIn forwards;
+    animation-delay: 0.5s;
+}
+
+@keyframes fadeIn{
+    to {
+        scale: 1;
+        opacity: 1;
+    }
+}
