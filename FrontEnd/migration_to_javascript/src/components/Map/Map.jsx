@@ -2,7 +2,7 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import L from 'leaflet';
-import locationLogo from '../../assets/location-dot-solid.svg';
+import locationLogo from '../../assets/unnamed.png';
 import '../../App.css';
 import { LocationMarker } from './LocationMarker';
 import { MapConfig } from './MapConfig';
