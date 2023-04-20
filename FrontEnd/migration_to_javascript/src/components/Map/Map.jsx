@@ -2,7 +2,7 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import L from 'leaflet';
-import locationLogo from '../../assets/location-dot-solid.svg';
+import locationLogo from '../../assets/unnamed.png';
 import '../../App.css';
 import { LocationMarker } from './LocationMarker';
 import { MapConfig } from './MapConfig';
@@ -13,16 +13,16 @@ function Map(){
     const [dataLoaded , setdataLoaded] = useState(false);
   
     useEffect(()=>{ 
-      // ( async () => {
-      //   try{
-      //     const { data } = await axios.get('https://webapp.metropol.gov.co/wsencicla/api/Disponibilidad/GetDisponibilidadMapas/')
-      //     setStations(data);
-      //     setdataLoaded(true);
-      //   }
-      //   catch (error){
-      //     console.log(error)
-      //   }
-      // })();
+      ( async () => {
+        try{
+          const { data } = await axios.get('https://webapp.metropol.gov.co/wsencicla/api/Disponibilidad/GetDisponibilidadMapas/')
+          setStations(data);
+          setdataLoaded(true);
+        }
+        catch (error){
+          console.log(error)
+        }
+      })();
 
     }, [])
 
