@@ -13,16 +13,16 @@ function Map(){
     const [dataLoaded , setdataLoaded] = useState(false);
   
     useEffect(()=>{ 
-      // ( async () => {
-      //   try{
-      //     const { data } = await axios.get('https://webapp.metropol.gov.co/wsencicla/api/Disponibilidad/GetDisponibilidadMapas/')
-      //     setStations(data);
-      //     setdataLoaded(true);
-      //   }
-      //   catch (error){
-      //     console.log(error)
-      //   }
-      // })();
+       // ( async () => {
+       //  try{
+       //    const { data } = await axios.get('https://webapp.metropol.gov.co/wsencicla/api/Disponibilidad/GetDisponibilidadMapas/')
+       //   setStations(data);
+       //  setdataLoaded(true);
+       // }
+       // catch (error){
+       //   console.log(error)
+       // }
+       // })();
 
     }, [])
 

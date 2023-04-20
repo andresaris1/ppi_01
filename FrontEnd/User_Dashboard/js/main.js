@@ -31,7 +31,7 @@ const weatherDetails = document.querySelector('.weather-details');
 const error404 = document.querySelector('.not_found');
 
 search.addEventListener('click', () => {
-    const APIKEY = '4a3b4XXXXef5b8cfcef33f8656a5XXXX';
+    const APIKEY = '4a3b40c79ef5b8cfcef33f8656a55b32';
     const city = document.querySelector('.search_box input').value;
 
     // Condicionales error 404
