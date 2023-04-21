@@ -292,7 +292,7 @@ body{
 /* == Imagen ========= */
 .weather-box img{
     width: 70%;
-    margin-top: 30px;
+    margin-top: -20px;
 }
 
 /* == Contenido ========= */
@@ -301,7 +301,7 @@ body{
     color: white;
     font-size: 4rem;
     font-weight: 800;
-    margin-top: -10px;
+    margin-top: -30px;
     margin-left: -16px;
 }
 
@@ -323,7 +323,7 @@ body{
     width: 100%;
     display: flex;
     justify-content: space-between;
-    margin-top: 10px;
+    margin-top: 0px;
 }
 
 .weather-details .humidity, .weather-details .wind{
@@ -332,11 +332,11 @@ body{
     width: 60%;
     height: 100px;
     justify-content: space-between;
-    padding: 60px;
+    padding: 35px;
 }
 
 .weather-details .humidity{
-    padding-left: 20px;
+    padding-left: 10px;
     justify-content: flex-start;
 }
 
@@ -383,6 +383,7 @@ body{
     height: 100%;
     width: 200px;
 }
+
 
 
 

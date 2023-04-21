@@ -112,10 +112,73 @@ search.addEventListener('click', () => {
 })
 
 
-// ============================== MAPA CON GOOGLE API ============================================
-const map = L.map('map').setView([51.505, -0.09], 13);
+// ============================== MAPA CON OPEN STREET Y NOMINATIM ============================================
 
-	const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-		maxZoom: 19,
-		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-	}).addTo(map);
+// Definir las constantes
+const searchInput = document.getElementById('search');
+const resultList = document.getElementById('result-list');
+const mapContainer = document.getElementById('map');
+const currentMarkers = [];
+
+// Crear el mapa centrado en el Valle de Aburra
+// Mapa con Open Street Map
+const map = L.map('map').setView([6.223, -75.6], 12);
+const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+}).addTo(map);
+
+// Hacer la llamada a la API mediante el botón
+document.getElementById('search-button').addEventListener('click', () => {
+    const query = searchInput.value;
+    // Llamar a la API de búsqueda de OpenStreetMap
+    fetch('https://nominatim.openstreetmap.org/search?format=json&polygon=1&addressdetails=1&q=' + query)
+        .then(result => result.json())
+        .then(parsedResult => {
+            // Mostrar los resultados en la lista de resultados
+            setResultList(parsedResult);
+        });
+});
+
+function setResultList(parsedResult) {
+    // Limpiar la lista de resultados y los marcadores anteriores
+    resultList.innerHTML = "";
+    for (const marker of currentMarkers) {
+        map.removeLayer(marker);
+    }
+    // Hacer un zoom out para mostrar todos los resultados en el mapa
+    map.flyTo(new L.LatLng(6.223, -75.6), 11);
+    // Crear un elemento de la lista de resultados por cada resultado de la búsqueda
+    for (const result of parsedResult) {
+        const li = document.createElement('li');
+        li.classList.add('list-group-item', 'list-group-item-action');
+        // Mostrar la información del resultado en formato JSON en el elemento de la lista
+        li.innerHTML = JSON.stringify({
+            displayName: result.display_name,
+            lat: result.lat,
+            lon: result.lon
+        }, undefined, 2);
+        // Hacer zoom en el mapa y resaltar el elemento de la lista cuando se hace clic en él
+        li.addEventListener('click', (event) => {
+            for(const child of resultList.children) {
+                child.classList.remove('active');
+            }
+            event.target.classList.add('active');
+            const clickedData = JSON.parse(event.target.innerHTML);
+            const position = new L.LatLng(clickedData.lat, clickedData.lon);
+            map.flyTo(position, 15);
+        })
+        // Crear un marcador en el mapa para el resultado de la búsqueda
+        const position = new L.LatLng(result.lat, result.lon);
+        currentMarkers.push(new L.marker(position).addTo(map));
+        // Agregar el elemento de la lista al resultado final
+        resultList.appendChild(li);
+    }
+}
+
+
+
+
+
+
+   
