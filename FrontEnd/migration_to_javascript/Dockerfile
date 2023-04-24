@@ -1,4 +1,4 @@
-FROM node:latest
+FROM node:17-alpine
 
 
 
@@ -8,7 +8,7 @@ COPY package.json .
 RUN npm i
 
 COPY . .
-  
-EXPOSE 5173
+
+EXPOSE $PORT
 
 CMD ["npm", "run", "dev"]

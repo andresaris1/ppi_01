@@ -15,7 +15,7 @@ function SessionContext({children}){
             setLoggedIn(true)
             setAuthTokens(JSON.parse(authTokensStoraged))
         }
-    }, [] )
+    }, [loggedIn] )
 
 
     return(

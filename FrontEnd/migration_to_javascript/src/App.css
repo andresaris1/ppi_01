@@ -8,7 +8,6 @@
 
 /* Component's styles */
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 *
 {
     margin: 0;
@@ -282,7 +281,7 @@ ul {
  }
  
  .dropdown_container{
-    z-index: 10;
+    z-index: 1000;
     position: absolute;
     top: 41px;
     width: 120px;
@@ -324,4 +323,240 @@ ul {
     color: red;
     font-style: italic;
 
+ }
+
+/* Switch button styles for map wigdets */
+
+ .switch {
+   position: relative;
+   display: inline-block;
+   width: 50px;
+   height: 24px;
+ }
+
+ .switch input {
+   opacity: 0;
+   width: 0;
+   height: 0;
+ }
+
+
+ /* The slider */
+ .slider {
+   position: absolute;
+   cursor: pointer;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   background-color: #ccc;
+   -webkit-transition: .4s;
+   transition: .4s;
+ }
+ 
+ .slider:before {
+   position: absolute;
+   content: "";
+   height: 15px;
+   width: 15px;
+   left: 4px;
+   bottom: 4px;
+   background-color: white;
+   -webkit-transition: .4s;
+   transition: .4s;
+ }
+ 
+ input:checked + .slider {
+   background-color: #2196F3;
+ }
+ 
+ input:focus + .slider {
+   box-shadow: 0 0 1px #2196F3;
+ }
+ 
+ input:checked + .slider:before {
+   -webkit-transform: translateX(26px);
+   -ms-transform: translateX(26px);
+   transform: translateX(26px);
+ }
+ 
+ /* Rounded sliders */
+ .slider.round {
+   border-radius: 34px;
+ }
+ 
+ .slider.round:before {
+   border-radius: 50%;
+ }
+ 
+
+.switch_control{
+   width: 100%;
+   height: auto;
+   display: flex;
+   flex-direction : row;
+   justify-content: space-between;
+   align-items: center;
+   gap: 5px;
+ }
+
+.widgets_box{
+   position:  absolute;
+   top: 90px;
+   left: 10px;
+   z-index: 990;
+   width: auto;
+   height: auto;
+   display: flex;
+   flex-direction : column;
+   justify-content: center;
+   align-items: center;
+   gap: 10px;
+   background-color: rgba( 255, 255, 255, .8);
+   border-radius: 7px;
+   padding: 10px;
+}
+
+/* review mode cursor handler */
+div.leaflet-container .review_mode{
+   cursor: crosshair !important;
+}
+
+
+.review_btns{
+   margin-top: 3px;
+   display: flex;
+   gap: 10px;
+}
+
+.review_btns button {
+   border-radius: 10px;
+   padding: 3px;
+   font-style: italic;
+}
+
+.review_btns button.save_review_btn{
+   font-weight: bold;
+}
+
+.review_form{
+   /* position: relative; */
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   width: 300px;
+   background-color: cadetblue;
+   border-radius: 10px;
+   border: 1px solid black;
+   padding: 5px;
+}
+
+.review_form textarea {
+   padding: 3px;
+   border-radius: 10px;
+   width: 100%;
+   min-height: 85px;
+   cursor: no-drop;
+}
+
+.review_form_container{
+   position: relative;
+   background: red;
+   width: 300px;
+   z-index: 999;
+   border-radius: 10px;
+   
+}
+
+button.close_review_box { 
+   position: absolute;
+   right: -12px;
+   top: -12px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 20px;
+   height: 20px;
+   border-radius: 50%;
+   padding: 10px;
+   z-index: 9999;
+   color: black;
+   font-weight: bold;
+   cursor: pointer;
+}
+
+/* Popup of encicla stations */
+
+.custom-popup {
+   color: #000;
+   font-size: 14px;
+   font-weight: 600;
+   width: auto;
+   height: auto;
+   border-radius: 5px;
+   padding: 10px;
+   text-align: center;
+ }
+ 
+ .custom-popup .popup-header {
+   background-color: #587b7f;
+   color: #fff;
+   font-size: 16px;
+   font-weight: 700;
+   padding: 5px;
+   margin-bottom: 5px;
+   border-radius: 5px;
+   text-align: center;
+ }
+ 
+ .custom-popup .capacity,
+ 
+ .custom-popup .bikes {
+   display: inline-block;
+   border-radius: 5px;
+   padding: 5px;
+   background-color: #08ABBC;
+   color: #fff;
+   width: 50%;
+   text-align: center;
+ }
+ 
+ .custom-popup .bikes {
+   display: inline-block;
+   color: #fff;
+   padding: 5px;
+   border-radius: 5px;
+   width: 50%;
+   text-align: center;
+ }
+
+ .custom-popup .type {
+   display: block;
+   margin: 5px auto;
+   padding: 2px;
+   background-color: #0072C6;
+   color: #fff;
+   border-radius: 5px;
+   width: auto;
+   text-align: center;
+ }
+ 
+ .custom-popup .closed {
+   display: block;
+   background-color: #f44336;
+   color: #fff;
+   border-radius: 5px;
+   width: auto;
+   text-align: center;
+ }
+ 
+ .custom-popup .open {
+   display: block;
+   color: #fff;
+   background-color: #4caf50;
+   border-radius: 5px;
+   padding: 5px;
+   width: auto;
+   text-align: center;
  }

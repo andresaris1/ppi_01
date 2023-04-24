@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useContext } from 'react';
 import '../../App.css'
 import { postLogin } from '../utils/login';
 import { useNavigate} from 'react-router-dom';
@@ -20,24 +20,7 @@ function Login(){
          email: '',
          password: ''
      });
- 
-    // useEffect(()=>{ 
-    //     ( async () => {
-    //       try
-    //       {
-    //         if(loggeedIn){
-    //             const { data } = await axios.get('https://bicimaps.herokuapp.com/api/user-detail/')
-    //             setUser(data)
-    //             console.log(data)
-    //         }
-    //       }
-    //       catch (error){
-    //         console.log(error)
-    //       }
-    //     })();
-    //   }, [loggeedIn])
 
-    
     //Handlers
     const handleChange = (e) => {
         setCredentials({...credentials, 
@@ -47,14 +30,19 @@ function Login(){
     const handleSubmit = (e) => {
         e.preventDefault();
         const parsedCredentials = JSON.stringify(credentials);
+
         postLogin(URL_LOGIN, parsedCredentials)
             .then(( data ) => {
                 if(data.access){
                     setLoggedIn(true);
+                    localStorage.setItem('authTokens', JSON.stringify(data))
                     navigate('/map')
                 }
             })
-            .catch((error) => setError("Credenciales inválidas"))
+            .catch((error) => {
+                console.log(error)
+                setError("Credenciales inválidas")
+            })            
     }
 
     return(
