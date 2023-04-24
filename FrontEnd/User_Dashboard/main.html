@@ -9,6 +9,11 @@
     <! ======= Styles =========================== > 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin=""/>
     <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+    <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.0.0/services/services-web.min.js"></script>
+<script>
+  tomtom.key = "qEtDA5CGLEkJwIPG6rjEacEeXpSOK7sQ";
+</script>
+
 
     <link rel="stylesheet" href="css/dash_style.css">
 </head>
@@ -126,6 +131,9 @@
                     </button>
                 </label>
                 
+
+                <!-- Agregar este elemento -->
+              
             </div>
             
         </div>
@@ -133,11 +141,12 @@
         <div class="results">
             <ul id="result-list" class="cols">
             </ul>
+
+    
           </div>
           <div id="map" style="height: 800px; width: 1200px;
           z-index: 0;"></div>
 
-   </div>
 
    <! ============== Scripts =========================== > 
    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -148,8 +157,48 @@
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
         crossorigin="anonymous"></script>
 
+        <script>
+            const autoCompleteOptions = {
+              // El lenguaje utilizado para las sugerencias
+              language: "en-GB",
+              // La ubicación para centrar los resultados y poder dar sugerencias adecuadas
+              // Es importante tener en cuenta que en el SDK de TomTom Maps se maneja con longitud y latitud
+              position: [19.4353, -99.1434],
+              limit: 5 // el límite de sugerencias
+            };
+            
+            // Obtiene la entrada de texto por ID
+            const searchBox = document.getElementById("search");
+            
+            // Agrega un listener al evento de entrada del usuario
+            searchBox.addEventListener("input", () => {
+              // Obtiene el valor actual del input
+              const query = searchBox.value;
+              // si el valor es mayor a dos caracteres
+              if (query.length > 2) {
+                // Utiliza la función tomtom.autoComplete para obtener sugerencias de ubicaciones
+                tomtom.autoComplete().query(query, autoCompleteOptions).then((response) => {
+                  // Borra los resultados anteriores
+                  const resultList = document.getElementById("result-list");
+                  resultList.innerHTML = "";
+                  // Agrega cada resultado como un elemento de lista
+                  response.results.forEach((result) => {
+                    const li = document.createElement("li");
+                    li.innerHTML = result.address.freeformAddress;
+                    resultList.appendChild(li);
+                  });
+                });
+              } else {
+                // Borra los resultados anteriores si el valor es menor o igual a dos caracteres
+                const resultList = document.getElementById("result-list");
+                resultList.innerHTML = "";
+              }
+            });
+        </script>
+
 
    <script src="js/main.js"></script>
+
 
 
 
