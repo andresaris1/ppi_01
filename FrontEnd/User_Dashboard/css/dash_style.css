@@ -229,7 +229,7 @@ body{
 }
 
 .search_box input::placeholder{
-    font-size: 20px;
+    font-size: 16px;
     color: #002147;
     font-weight: 400;
 }
@@ -384,8 +384,7 @@ body{
     width: 200px;
 }
 
-
-
+  
 
 @keyframes fadeIn{
     to {
