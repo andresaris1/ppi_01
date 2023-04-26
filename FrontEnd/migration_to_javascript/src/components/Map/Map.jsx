@@ -4,8 +4,8 @@ import {
   Marker,
   Popup,
   Polyline,
+  LayersControl,
 } from "react-leaflet";
-import { SearchControl, OpenStreetMapProvider } from "leaflet-geosearch";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import L, { map } from "leaflet";
@@ -20,11 +20,9 @@ import { Review } from "../Review/Review";
 import reviewMarker from "../../assets/comment-dots-solid.svg";
 import { LocateUserControl } from "./LocateUserControl";
 import { RoutingMachine } from "./RoutingMachine";
+import { LayerControl } from "./LayerControl";
 
 function Map() {
-  // Search
-  const provider = new OpenStreetMapProvider();
-
   // Encicla Stations
   const [stations, setStations] = useState([]);
   const [stationsLoaded, setStationsLoaded] = useState(false);
@@ -126,6 +124,8 @@ function Map() {
         zoom={14}
         scrollWheelZoom={true}
       >
+        <RoutingMachine />
+
         <MapEvents
           reviewMode={reviewMode}
           setReviewCoords={setReviewCoords}
@@ -255,7 +255,6 @@ function Map() {
 
           <LocateUserControl userPosition={userPosition} />
         </WidgetsBox>
-        <RoutingMachine></RoutingMachine>
       </MapContainer>
     </>
   );
