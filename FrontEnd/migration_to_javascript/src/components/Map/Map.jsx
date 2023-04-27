@@ -20,7 +20,7 @@ import { Review } from "../Review/Review";
 import reviewMarker from "../../assets/comment-dots-solid.svg";
 import { LocateUserControl } from "./LocateUserControl";
 import { RoutingMachine } from "./RoutingMachine";
-import { LayerControl } from "./LayerControl";
+
 
 function Map() {
   // Encicla Stations
@@ -124,7 +124,7 @@ function Map() {
         zoom={14}
         scrollWheelZoom={true}
       >
-        <RoutingMachine />
+        < RoutingMachine />
 
         <MapEvents
           reviewMode={reviewMode}
@@ -249,7 +249,6 @@ function Map() {
             reviewMode={reviewMode}
             setReviewMode={setReviewMode}
           />
-
           <LocateUserControl userPosition={userPosition} />
         </WidgetsBox>
       </MapContainer>
