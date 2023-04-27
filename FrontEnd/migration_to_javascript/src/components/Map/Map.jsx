@@ -169,9 +169,6 @@ function Map() {
                     <span className="type">{station.type}</span>
                     <div>{station.address}</div>
                     <div>{station.description}</div>
-                    <div className={station.closed ? "open" : "closed"}>
-                      {station.closed ? <p>abierto</p> : <p>cerrado</p>}
-                    </div>
                   </Popup>
                 </Marker>
               );
