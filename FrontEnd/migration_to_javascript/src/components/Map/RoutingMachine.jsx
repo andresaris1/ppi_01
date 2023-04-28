@@ -6,30 +6,28 @@ import "leaflet-control-geocoder";
 import "leaflet-control-geocoder/dist/Control.Geocoder.css";
 import { useMap } from "react-leaflet";
 
-
 const RoutingMachine = () => {
-
   const mapInstance = useMap();
 
   useEffect(() => {
-
-    if(!mapInstance) return;
+    if (!mapInstance) return;
 
     const routingControl = L.Routing.control({
-      waypoints: [L.latLng(6.164397460539476, -75.61191804045387), L.latLng(6.216164572769825, -75.58605337296397)],
+      waypoints: [],
       routeWhileDragging: true,
       geocoder: L.Control.Geocoder.nominatim({
         geocodingQueryParams: {
           countrycodes: "co",
+          bounded: 1,
+          viewbox: "-75.766,6.081,-75.329,6.452",
         },
       }),
+      language: "es",
     }).addTo(mapInstance);
 
-    return () => mapInstance.removeControl(routingControl)
+    return () => mapInstance.removeControl(routingControl);
+  }, [mapInstance]);
 
-  }, [mapInstance])
-
-  
   return null;
 };
 
