@@ -1,16 +1,17 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import '../../App.css'
 import { postLogin } from '../utils/login';
 import { useNavigate} from 'react-router-dom';
 import { AppContext } from '../../context/AppContext';
 import { PasswordField } from '../utils/PasswordField';
+import { Notice } from '../Notice/Notice';
 
 const URL_LOGIN = 'https://bicimaps.herokuapp.com/api/login/';
 
 function Login(){
 
     //Consuming context
-    const { setLoggedIn, loggedIn } = useContext(AppContext)
+    const { setLoggedIn, loggedIn, notice, setNotice  } = useContext(AppContext)
     console.log(loggedIn)
     const [error, setError] = useState('');
      // React router helper
@@ -40,13 +41,21 @@ function Login(){
                 }
             })
             .catch((error) => {
-                console.log(error)
-                setError("Credenciales inválidas")
+                setNotice((prev)=> {
+                    return { ...prev, show:true, content:"No hay una cuenta activa con estas credenciales.", type:'error', showTime:5}
+                })
             })            
     }
 
     return(
-        <>
+        <>  
+           {
+            notice.show && (<Notice content={notice.content} 
+                                    type={notice.type}
+                                    showHandler = {setNotice}
+                                    showTime = {notice.showTime}
+                           />)
+           } 
             <div className="wrapper">
                 <div className="form_box login"> 
                 <h2 className='subtitle'>Bienvenid@</h2>

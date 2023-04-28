@@ -1,11 +1,10 @@
 import { useMap, useMapEvents} from 'react-leaflet'
 
-function MapEvents({reviewMode, setReviewCoords, setUserPosition}){
+function MapEvents({reviewMode, setReviewCoords, setUserPosition, setNearScale, nearScale}){
 
     const mapInstance = useMap()
-
     const mapEvents = useMapEvents({ 
-        locationfound(e) {
+        locationfound : (e) => {
             setUserPosition(e.latlng)
             mapInstance.flyTo(e.latlng, 16)
           },
@@ -21,8 +20,17 @@ function MapEvents({reviewMode, setReviewCoords, setUserPosition}){
                     setReviewCoords({map : coords, box: boxCoords})
                     mapInstance.setView(coords)    
                 }
-                 
-            }  
+            }
+        },
+        zoomend : () => {
+            if(mapEvents.getZoom() >= 15){
+                !nearScale && setNearScale( true )
+            }
+            else if( mapEvents.getZoom() < 15) {
+                nearScale && setNearScale( false )
+                console.log(nearScale)
+
+            }
         }
     })
     return null
@@ -31,7 +39,3 @@ function MapEvents({reviewMode, setReviewCoords, setUserPosition}){
 export { MapEvents }
 
 
-// zoomend : () => {
-//     console.log(mapEvents.getZoom())
-//     setMapScale(mapEvents.getZoom())
-// }

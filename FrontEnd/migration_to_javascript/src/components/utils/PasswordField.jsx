@@ -18,7 +18,7 @@ function PasswordField({value, name, onChange, placeholder}){
                 placeholder= {placeholder}
                 type={show ? "text": "password"}
                 required
-                />
+            />
             <button type="button"
                     className="show_password_btn"
                     onClick={handleShow}>
