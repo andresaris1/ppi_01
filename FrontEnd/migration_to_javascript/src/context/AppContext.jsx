@@ -8,6 +8,7 @@ function SessionContext({children}){
     const [loggedIn, setLoggedIn] = useState(false);
     const [user, setUser] = useState({});
     const [authTokens, setAuthTokens] = useState({})
+    const [ notice, setNotice ] = useState({show:false, type:'', content:''})
 
     useEffect( () =>{
         const authTokensStoraged = localStorage.getItem("authTokens")
@@ -25,7 +26,9 @@ function SessionContext({children}){
                                user, 
                                setUser,
                                authTokens,
-                               setAuthTokens
+                               setAuthTokens,
+                               notice,
+                               setNotice
                                }} >
             {children}
         </AppProvider>
