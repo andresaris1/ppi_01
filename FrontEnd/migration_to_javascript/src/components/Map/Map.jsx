@@ -15,9 +15,15 @@ import { LocateUserControl } from './LocateUserControl';
 import { Notice } from "../Notice/Notice";
 import { StationPopup } from './StationPopup';
 import { RoutingMachine } from './RoutingMachine';
+import parkingMarker from '../../assets/bicycle-parking.png';
 
 
 function Map( { appRef } ) {
+
+    // Bike parking
+    const [ parking, setParking ] = useState([]);
+    const [ parkingLoaded , setParkingLoaded ] = useState(false);
+    const [ showParking, setShowParking ]  = useState(false)
     // Encicla Stations  
     const [ stations, setStations ] = useState([]);
     const [ stationsLoaded , setStationsLoaded ] = useState(false);
@@ -62,6 +68,22 @@ function Map( { appRef } ) {
             console.log(response.data)
             setBikeWays(response.data)
             setBikewaysLoaded(true)
+          }
+
+        }
+        catch(error){
+
+        }
+      })();
+
+      ( async () => {
+        try{
+
+          const response = await axios.get('https://bicimaps.herokuapp.com/api/bike-parking-list/')
+          if(response.status === 200){
+            console.log(response.data)
+            setParking(response.data)
+            setParkingLoaded(true)
           }
 
         }
@@ -134,7 +156,10 @@ function Map( { appRef } ) {
       iconUrl : reviewMarker,
       iconSize : [20, 20]
     })
-
+    const parkingIcon = new L.Icon({
+      iconUrl : parkingMarker,
+      iconSize : [30, 30]
+    })
     const defaultStyle = {
       color: "blue",
       weight: 4,
@@ -182,6 +207,20 @@ function Map( { appRef } ) {
               <LocationMarker userPosition = { userPosition } /> : 
               null
           }
+
+          {
+          parkingLoaded && 
+            showParking ? (
+              parking.features.map((parking) => {
+                return (
+                  <Marker
+                  position={[parking.geometry.coordinates[1],parking.geometry.coordinates[0]]}
+                  icon={parkingIcon}>
+                  </Marker>
+                )
+            })):
+            null
+          }
           {
             stationsLoaded && 
               showEstations ? (
@@ -204,7 +243,6 @@ function Map( { appRef } ) {
             })): 
             null
           }
-
           {
             bikewaysLoaded && showBikeways ? (
               bikeWays.map( ( bikeway ) => (
@@ -257,6 +295,12 @@ function Map( { appRef } ) {
               name = {"Encicla"}
               show = {showEstations}
               onToggle = {setShowStations}
+            />
+
+            <SwithControl 
+              name={"Biciparqueaderos"}
+              show = {showParking}
+              onToggle = {setShowParking}            
             />
 
             <SwithControl 
