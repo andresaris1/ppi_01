@@ -1,29 +1,25 @@
-import { MapContainer, TileLayer, Marker, Popup, Polyline, useMapEvents } from 'react-leaflet'
 import { useState, useEffect } from 'react';
+import { MapContainer, TileLayer, Marker, Popup, Polyline, ZoomControl } from 'react-leaflet'
 import L from 'leaflet';
 import axios from 'axios';
-import locationLogo from '../../assets/unnamed.png';
-import '../../App.css';
 import { LocationMarker } from './LocationMarker';
 import { MapEvents } from './MapEvents';
 import { SwithControl } from './SwitchControl';
 import { WidgetsBox } from './WidgetsBox';
 import { AddReviewControl } from './AddReviewControl';
 import { Review } from '../Review/Review';
-import reviewMarker from '../../assets/comment-dots-solid.svg'
 import { LocateUserControl } from './LocateUserControl';
 import { Notice } from "../Notice/Notice";
 import { StationPopup } from './StationPopup';
 import { RoutingMachine } from './RoutingMachine';
+import { MapTilesBox } from './MapTilesBox';
+import locationLogo from '../../assets/unnamed.png';
+import reviewMarker from '../../assets/comment-dots-solid.svg'
 import parkingMarker from '../../assets/bicycle-parking.png';
-
+import { mapTiles } from './mapTiles';
+import '../../App.css';
 
 function Map( { appRef } ) {
-
-    // Bike parking
-    const [ parking, setParking ] = useState([]);
-    const [ parkingLoaded , setParkingLoaded ] = useState(false);
-    const [ showParking, setShowParking ]  = useState(false)
     // Encicla Stations  
     const [ stations, setStations ] = useState([]);
     const [ stationsLoaded , setStationsLoaded ] = useState(false);
@@ -44,8 +40,13 @@ function Map( { appRef } ) {
     // User ubication
     const [ userPosition, setUserPosition ] = useState( null )
     // Handler user scale to show things 
-    const [nearScale, setNearScale] = useState( false ) 
-    // Modal  
+    const [nearScale, setNearScale] = useState( false )
+    // MapTile showed on map
+    const [ mapTile, setMapTile ] = useState("default")
+    // Bike parking
+    const [ parking, setParking ] = useState([]);
+    const [ parkingLoaded , setParkingLoaded ] = useState(false);
+    const [ showParking, setShowParking ]  = useState(false)
 
     
     useEffect(()=>{ 
@@ -69,10 +70,23 @@ function Map( { appRef } ) {
             setBikeWays(response.data)
             setBikewaysLoaded(true)
           }
-
         }
         catch(error){
+          console.log(error)
+        }
+      })();
 
+      (async () => {
+        try{
+
+          const response = await axios.get('https://bicimaps.herokuapp.com/api/reviews/')
+          if(response.status === 200){
+            setReviews( response.data )
+            setReviewsLoaded( true )
+          }
+        }
+        catch(error){
+          console.log(error)
         }
       })();
 
@@ -85,30 +99,12 @@ function Map( { appRef } ) {
             setParking(response.data)
             setParkingLoaded(true)
           }
-
-        }
-        catch(error){
-
-        }
-      })();
-
-      (async () => {
-        try{
-
-          const response = await axios.get('https://bicimaps.herokuapp.com/api/reviews/')
-          if(response.status === 200){
-            setReviews( response.data )
-            setReviewsLoaded( true )
-          }else{
-            
-          }
-    
         }
         catch(error){
           console.log(error)
         }
+      })();
 
-      })()
 
     }, [])
     // Effect to handler the cursor icon when is review mode on
@@ -129,6 +125,11 @@ function Map( { appRef } ) {
       iconUrl: locationLogo,
       iconSize: [25, 25]
     });
+
+    const parkingIcon = new L.Icon({
+      iconUrl : parkingMarker,
+      iconSize : [30, 30]
+    })
 
     const stationsLabelSetter = (name, percentage) => {
 
@@ -156,10 +157,7 @@ function Map( { appRef } ) {
       iconUrl : reviewMarker,
       iconSize : [20, 20]
     })
-    const parkingIcon = new L.Icon({
-      iconUrl : parkingMarker,
-      iconSize : [30, 30]
-    })
+
     const defaultStyle = {
       color: "blue",
       weight: 4,
@@ -179,6 +177,7 @@ function Map( { appRef } ) {
             center = { [6.259770689579672, -75.57469561881551] } 
             zoom = { 14 } 
             scrollWheelZoom = { true }
+            zoomControl = { false }
         >
           <MapEvents reviewMode = { reviewMode } 
                      setReviewCoords = { setReviewCoords }
@@ -188,9 +187,12 @@ function Map( { appRef } ) {
           />
 
           <TileLayer
-             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-             url="https://api.maptiler.com/maps/streets-v2/256/{z}/{x}/{y}.png?key=X5b3jIXLMhNqludN1m6R"
+             attribution={mapTiles[mapTile].attribution}
+             url= {mapTiles[mapTile].url}
           />
+
+          <ZoomControl position='topright'/>
+
           {/* Routing Machine component */}
           <RoutingMachine/>
 
@@ -206,20 +208,6 @@ function Map( { appRef } ) {
             userPosition ? 
               <LocationMarker userPosition = { userPosition } /> : 
               null
-          }
-
-          {
-          parkingLoaded && 
-            showParking ? (
-              parking.features.map((parking) => {
-                return (
-                  <Marker
-                  position={[parking.geometry.coordinates[1],parking.geometry.coordinates[0]]}
-                  icon={parkingIcon}>
-                  </Marker>
-                )
-            })):
-            null
           }
           {
             stationsLoaded && 
@@ -243,6 +231,7 @@ function Map( { appRef } ) {
             })): 
             null
           }
+
           {
             bikewaysLoaded && showBikeways ? (
               bikeWays.map( ( bikeway ) => (
@@ -273,12 +262,32 @@ function Map( { appRef } ) {
                         icon={reviewIcon}
                 >
                   <Popup>
-                    {review.review} - por: {review.user_id}
+                    <p> <i>{review.review}</i></p>
+                    <hr />
+                    <span>Por: {review.user_id}</span>
+                    <br />
+                    <span>{review.created_at}</span>
                   </Popup>
 
                 </Marker >
             ) ) : null
           }
+
+          {
+            parkingLoaded && 
+              showParking ? (
+                parking.features.map((parking) => {
+                  return (
+                    <Marker
+                    position={[parking.geometry.coordinates[1],parking.geometry.coordinates[0]]}
+                    icon={parkingIcon}>
+                    </Marker>
+                  )
+              })):
+              null
+          }
+
+
           {
             reviewCoords && 
               <Marker position={[reviewCoords?.map.lat, reviewCoords?.map.lng]}>
@@ -290,31 +299,30 @@ function Map( { appRef } ) {
                 /> 
               </Marker>
           }
-          <WidgetsBox>
+
+          <MapTilesBox changeTile = { setMapTile } />
+
+          <WidgetsBox >
             <SwithControl 
               name = {"Encicla"}
               show = {showEstations}
               onToggle = {setShowStations}
             />
-
-            <SwithControl 
-              name={"Biciparqueaderos"}
-              show = {showParking}
-              onToggle = {setShowParking}            
-            />
-
             <SwithControl 
               name={"Ciclo rutas"}
               show = {showBikeways}
               onToggle = {setShowBikeWays}            
             />
-
             <SwithControl 
               name={"Reseñas"}
               show = {showReviews}
               onToggle = {setShowReviews}            
             />
-
+            <SwithControl 
+              name={"Biciparqueaderos"}
+              show = {showParking}
+              onToggle = {setShowParking}            
+            />
             <AddReviewControl
               reviewMode = { reviewMode } 
               setReviewMode = { setReviewMode } 

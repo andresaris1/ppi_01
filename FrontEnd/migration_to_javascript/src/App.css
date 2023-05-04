@@ -270,33 +270,49 @@ ul {
  }
 
 
- /* Container */
+ /* Dropdown component*/
 
  .dropdown{
     position: relative;
     display: flex;
-    justify-content: center;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
  }
  
- .dropdown_container{
+
+.dropdown ul{
     z-index: 1000;
     position: absolute;
-    top: 41px;
-    width: 120px;
-    height: auto;
-    
- }
-
- .dropdown_menu{
-    font-size: 11px;
+    font-size: 14px;
     border-radius: 10px;
     text-align: center;
     border: solid 1px #002147;
     background-color: #fff;
+    overflow: hidden;
+    transition: opacity 1s ease-in-out;
  }
 
+ .dropdown ul li {
+   cursor: pointer;
+   white-space:nowrap;
+ }
+
+ .dropdown li a:hover{
+   background-color: #B8E0C9;
+ }
+
+ .dropdown li a {
+   display: block;
+   padding: 10px 15px;
+   width: 100%;
+ }
+
+
+
+
+
+ /* Login and signup */
  .password_field{
     display: flex;
     flex-direction: row;
@@ -389,7 +405,6 @@ ul {
    border-radius: 50%;
  }
  
-
 .switch_control{
    width: 100%;
    height: auto;
@@ -400,13 +415,12 @@ ul {
    gap: 5px;
  }
 
+ /* Boxes of the map */
 .widgets_box{
    position:  absolute;
-   top: 90px;
+   top: 180px;
    left: 10px;
    z-index: 990;
-   width: auto;
-   height: auto;
    display: flex;
    flex-direction : column;
    justify-content: center;
@@ -415,6 +429,21 @@ ul {
    background-color: rgba( 255, 255, 255, .8);
    border-radius: 7px;
    padding: 10px;
+}
+
+.tiles_box{
+   position: absolute;
+   top: 20px;
+   left: 50px;
+   z-index: 990;
+}
+
+.tiles_btn{
+   text-decoration: none;
+   padding: 5px;
+   background-color: #fff;
+   border: 1px solid #323131;
+   border-radius: 5px;
 }
 
 /* review mode cursor handler */

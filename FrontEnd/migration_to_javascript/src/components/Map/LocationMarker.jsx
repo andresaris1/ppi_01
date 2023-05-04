@@ -1,7 +1,7 @@
 import { Marker, Popup  } from "react-leaflet"
 import userIcon from '../../assets/person-biking-solid-anim.svg'
 
-function LocationMarker({userPosition}) {
+function LocationMarker({ userPosition }) {
 
     const userPositionIcon = new L.Icon({
         iconUrl: userIcon,
