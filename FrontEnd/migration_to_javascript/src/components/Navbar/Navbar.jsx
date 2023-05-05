@@ -1,10 +1,11 @@
-import '../../App.css';
+import { useContext } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { AppContext } from '../../context/AppContext';
+import { DropDown } from './DropDown';
+import { UserIconOptions } from './UserIconOptions';
 import logo from '../../assets/logo.png';
 import userLogo from '../../assets/user.png'
-import { AppContext } from '../../context/AppContext';
-import { useContext } from 'react';
-import { DropDown } from './DropDown';
+import '../../App.css';
 
 
 function Navbar(){
@@ -33,7 +34,7 @@ function Navbar(){
                             to="/signup"> Registrarse 
                         </Link> : null
                     }
-                    { !loggedIn ? 
+                    { ! loggedIn ? 
                         <Link
                             className={ pathname==='/login'?'paint':'' } 
                             to="/login" >Ingresar
@@ -42,7 +43,7 @@ function Navbar(){
                     }
                     {
                         loggedIn ? 
-                            <DropDown>
+                            <DropDown optionsConfig = { <UserIconOptions/> }>
                                 <img 
                                     className='profile_image' 
                                     src={ userLogo }/>
