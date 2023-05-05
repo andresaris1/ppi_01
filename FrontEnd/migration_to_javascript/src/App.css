@@ -675,14 +675,14 @@ button.close_box {
   width: 100%;
   align-items: center;
   justify-content: center;
-  margin-left: -450px;
+  margin-left: -750px;
   margin-top: 30px;
   padding: 0 10px;
   overflow: hidden;
 }
 
 .cols0 {
-  width: 50%;
+  width: 40%;
 }
 
 .topline {
@@ -723,13 +723,12 @@ p {
 
 .bike {
   position: relative;
-  width: 100%;
-  height: 100%;
-  margin-top: -150px;
-  margin-right: -750px;
+  margin-top: -250px;
+  margin-right: -850px;
 }
 
 .bike img {
   position: relative;
   border-radius: 10px;
+  height: 90%;
 }
