@@ -8,8 +8,9 @@ function Home() {
 
   useEffect(() => {
     const typed = new Typed(el.current, {
-      strings: ["Pasión", "Rapidez", "Soluciones", "familia", "BiciMaps"], // Strings to display
-      // Speed settings, try diffrent values untill you get good results
+      // Palabras a mostrar en el home
+      strings: ["Pasión", "Rapidez", "Soluciones", "familia", "BiciMaps"],
+      // Ajustes de velocidad
       startDelay: 300,
       typeSpeed: 100,
       backSpeed: 100,
