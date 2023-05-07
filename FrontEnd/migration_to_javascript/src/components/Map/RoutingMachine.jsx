@@ -20,9 +20,12 @@ const RoutingMachine = () => {
       routeWhileDragging: true,
       geocoder: new L.Control.Geocoder.Google({
         geocodingQueryParams: {
-          bounds: "7.1443,-76.2960;5.4411,-74.7855",
+          bounds: "6.0749, -75.7315;6.3565, -75.4443",
           key: "AIzaSyA9XJGPAUMvk-tiYLl-AyKfKmT_zCMmc20",
           components: "country:co",
+          componentRestrictions: {
+            country: "CO",
+          },
           language: "es",
           profile: "cycling",
           defaultMarkGeocode: false,
