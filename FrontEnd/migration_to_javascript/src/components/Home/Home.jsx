@@ -1,16 +1,22 @@
-import "../../App.css";
-import Typed from "typed.js";
-import bike from "../../assets/bikerdribbble.gif";
 import { useEffect, useRef } from "react";
+// Import css
+import "../../App.css";
+// Import lobrary typed effect
+import Typed from "typed.js";
+// Import gif biker
+import bike from "../../assets/bikerdribbble.gif";
 
 function Home() {
+  // Ref for element to apply the effect
   const el = useRef(null);
 
   useEffect(() => {
+    // Typed effect
     const typed = new Typed(el.current, {
-      // Palabras a mostrar en el home
+      // Words to be typed
       strings: ["Pasión", "Rapidez", "Soluciones", "familia", "BiciMaps"],
-      // Ajustes de velocidad
+
+      // Speed settings
       startDelay: 300,
       typeSpeed: 100,
       backSpeed: 100,
@@ -23,6 +29,7 @@ function Home() {
     };
   }, []);
 
+  // Render component (HTML)
   return (
     <>
       <div className="home">
@@ -30,6 +37,7 @@ function Home() {
           <span className="topline">Hola</span>
           <h1>Somos</h1>
           <h1>
+            {/* Placeholder for typed strings*/}
             <span className="multiText" ref={el}></span>
           </h1>
           <p> Aún estamos en proceso de construcción.</p>
@@ -44,4 +52,5 @@ function Home() {
   );
 }
 
+// Export component
 export { Home };
