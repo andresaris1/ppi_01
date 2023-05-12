@@ -231,10 +231,10 @@ h2.subtitle {
   height: 40px;
   border-radius: 10px;
   margin-top: 20px;
-  background: #002147;
+  background: #fff;
   font-size: 1.1em;
   font-weight: 600;
-  color: #fff;
+  color: #002147;
   border: none;
   outline: none;
   cursor: pointer;
