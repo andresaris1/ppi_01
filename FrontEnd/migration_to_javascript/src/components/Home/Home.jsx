@@ -32,6 +32,7 @@ function Home() {
   // Render component (HTML)
   return (
     <>
+      <h1 className="text-3xl font-bold underline">Hello world!</h1>
       <div className="home">
         <div className="cols0">
           <span className="topline">Hola</span>

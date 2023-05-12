@@ -1,3 +1,8 @@
+/* Tailwind directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 .App {
   display: flex;
   flex-direction: column;

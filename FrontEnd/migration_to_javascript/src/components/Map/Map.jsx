@@ -64,8 +64,7 @@ function Map({ appRef }) {
     (async () => {
       try {
         const { data } = await axios.get(
-          "https://webapp.metropol.gov.co/wsencicla/api/Disponibilidad/" +
-            "GetDisponibilidadMapas/"
+          "https://webapp.metropol.gov.co/wsencicla/api/Disponibilidad/GetDisponibilidadMapas/"
         );
         setStations(data);
         setStationsLoaded(true);
@@ -121,6 +120,7 @@ function Map({ appRef }) {
       }
     })();
   }, []);
+
   // Effect to handler the cursor icon when is review mode on
   useEffect(() => {
     const mapContainer = document.querySelector("div.leaflet-container");
@@ -139,17 +139,19 @@ function Map({ appRef }) {
       });
   }, [reviewMode]);
 
-  // Style settings of the map
+  // Style settings of the map station icon
   const stationsIcon = new L.Icon({
     iconUrl: locationLogo,
     iconSize: [25, 25],
   });
 
+  // Style settings of the map parking icon
   const parkingIcon = new L.Icon({
     iconUrl: parkingMarker,
     iconSize: [30, 30],
   });
 
+  // Function to handler the click on the map on station icon
   const stationsLabelSetter = (name, percentage) => {
     let colorClass = "";
     switch (true) {
@@ -162,7 +164,8 @@ function Map({ appRef }) {
       default:
         colorClass = "enoughBikes";
     }
-
+ 
+    // Label html for encicla stations
     const stationsLabel = new L.divIcon({
       className: `stations_labels ${colorClass}`,
       html: `<span>${name}</span>`,
@@ -209,6 +212,7 @@ function Map({ appRef }) {
           url={mapTiles[mapTile].url}
         />
 
+        {/* Control zoom of the map and ubication */}
         <ZoomControl position="topright" />
 
         {/* Routing Machine component */}
@@ -222,6 +226,7 @@ function Map({ appRef }) {
             showHandler={setNotice}
           />
         )}
+
         {/* Show position of the user in the map */}
         {userPosition ? <LocationMarker userPosition={userPosition} /> : null}
         {stationsLoaded && showEstations
@@ -324,6 +329,7 @@ function Map({ appRef }) {
 
         <MapTilesBox changeTile={setMapTile} />
 
+        {/* Widget switch control for reviews, bikeways ... */}
         <WidgetsBox>
           <SwithControl
             name={"Encicla"}
