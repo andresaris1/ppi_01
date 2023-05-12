@@ -557,25 +557,6 @@ button.close_box {
   text-align: center;
 }
 
-.custom-popup .closed {
-  display: block;
-  background-color: #f44336;
-  color: #fff;
-  border-radius: 5px;
-  width: auto;
-  text-align: center;
-}
-
-.custom-popup .open {
-  display: block;
-  color: #fff;
-  background-color: #4caf50;
-  border-radius: 5px;
-  padding: 5px;
-  width: auto;
-  text-align: center;
-}
-
 /* Notice boxes */
 .notice_container {
   width: 40%;
