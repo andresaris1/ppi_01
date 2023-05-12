@@ -25,9 +25,6 @@ class User(AbstractUser, PermissionsMixin):
     first_name = models.CharField(max_length=100, null=True, blank=True)
     last_name = models.CharField(max_length=100, null=True, blank=True)
     has_bike = models.BooleanField(default=True)
-    birth_date = models.DateField(null=True, blank=True)
-    occupation = models.CharField(max_length=100, null=True, blank=True)
-    university = models.CharField(max_length=100, null=True, blank=True)
     is_staff = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
     is_superuser = models.BooleanField(default=False)
@@ -39,7 +36,8 @@ class User(AbstractUser, PermissionsMixin):
     # Redefinir el método save para que el username sea el email sin el dominio
     def save(self, *args, **kwargs):
         if not self.username:
-            self.username = slugify(self.email.split('@')[0])
+            if "@" in self.email:
+                self.username = slugify(self.email.split('@')[0])
         super().save(*args, **kwargs)
 
     def __str__(self):

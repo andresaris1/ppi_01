@@ -16,7 +16,6 @@ class ReviewCreationView(APIView):
     permission_classes = [ IsAuthenticated, ]
 
     def post(self, request):
-
         User = get_user_model()
         user_instance = User.objects.get(email = request.user.email)
         data = JSONParser().parse(request)

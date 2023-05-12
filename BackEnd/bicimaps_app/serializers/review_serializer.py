@@ -14,14 +14,14 @@ class ReviewCreationSerializer(GeoFeatureModelSerializer):
         model = Review
         geo_field = "review_location"
         # fields = '__all__'
-        fields = ['review_id','review_location', 'review']
+        fields = ['review_id','review_location', 'review', "created_at"]
 
 
 class ReviewListSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Review
-        fields = ['review_id','review_location', 'review', "user_id"]
+        fields = ['review_id','review_location', 'review', "user_id", "created_at"]
 
 
 class ReviewDetailSerializer(serializers.ModelSerializer):

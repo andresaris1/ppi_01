@@ -4,5 +4,6 @@ from .route_serializer import RouteCreationSerializer
 from .route_serializer import RoutesListSerializer
 from .encicla_stations_serializer import EnciclaCreationSerializer
 from .bike_way_serializer import BikeWaysCreationSerializer
+from .bike_parking_serializer import BikeParkingSerializer
 
 
