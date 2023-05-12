@@ -1,3 +1,8 @@
+/* Tailwind directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 .App {
   display: flex;
   flex-direction: column;
@@ -548,25 +553,6 @@ button.close_box {
   background-color: #0072c6;
   color: #fff;
   border-radius: 5px;
-  width: auto;
-  text-align: center;
-}
-
-.custom-popup .closed {
-  display: block;
-  background-color: #f44336;
-  color: #fff;
-  border-radius: 5px;
-  width: auto;
-  text-align: center;
-}
-
-.custom-popup .open {
-  display: block;
-  color: #fff;
-  background-color: #4caf50;
-  border-radius: 5px;
-  padding: 5px;
   width: auto;
   text-align: center;
 }

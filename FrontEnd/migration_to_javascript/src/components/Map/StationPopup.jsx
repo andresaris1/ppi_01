@@ -40,7 +40,6 @@ function StationPopup( {station, bikesPercentage, appRef} ){
             <span className="type">{station.type}</span>
             <div>{station.address}</div>
             <div>{station.description}</div>
-            <div className={station.closed ? "closed" : "open"}>{station.closed ? <p>cerrado</p> : <p>abierto</p>}</div>
             { station?.picture?.length > 5 ? 
                 <button onClick={toggleModal} > Fotos </button> : 
                 null 
