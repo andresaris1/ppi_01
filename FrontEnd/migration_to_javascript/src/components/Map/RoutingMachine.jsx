@@ -32,9 +32,7 @@ const RoutingMachine = () => {
           // Limitar la búsqueda al Valle de Aburrá
           bounds: "6.0749, -75.7315;6.3565, -75.4443",
           key: "AIzaSyA9XJGPAUMvk-tiYLl-AyKfKmT_zCMmc20",
-          componentRestrictions: {
-            country: "CO",
-          },
+          component: "country:co",
           language: "es",
           profile: "cycling",
         },

@@ -4,6 +4,7 @@ import React from "react";
 import Typed from "typed.js";
 // Import component
 import { ServicesBar } from "./ServicesBar";
+import { About } from "./about";
 // Import icons
 import { FaGithub } from "react-icons/fa";
 // Import gif biker
@@ -46,7 +47,10 @@ const Home = () => {
     <>
       <section className="h-[80vh] w-screen grid grid-cols-1 md:grid-cols-8">
         {/* First col content */}
-        <div className="md:col-span-5 flex flex-col items-left justify-center gap-8 p-20">
+        <div
+          className="md:col-span-5 flex flex-col items-left 
+        justify-center gap-8 p-20"
+        >
           {/* Text title */}
           <div className="gap-4">
             <span className="text-6xl font-bold">Hola,</span>
@@ -57,7 +61,7 @@ const Home = () => {
           </div>
           {/* Description paragraph */}
           <p className="text-gray-600 text-2xl ">
-            Somos una comunidad de ciclistas que busca mejorar la experiencia de
+            Somos una app para ciclistas que busca mejorar la experiencia de
             navegación de los ciclistas en el Valle de Aburrá, y sí tenemos
             integración con EnCicla, por si dejaste la bici en casa.
           </p>
@@ -67,7 +71,9 @@ const Home = () => {
             {/* Button buy me a coffee */}
             <button
               onClick={buyMeACoffee}
-              class="bg-transparent hover:bg-bl text-gray-700 font-semibold hover:text-white py-2 px-4 border border-bluel-500 hover:border-transparent rounded"
+              class="bg-transparent hover:bg-bl text-gray-700 font-semibold
+               hover:text-white py-2 px-4 border border-bluel-500 
+               hover:border-transparent rounded"
             >
               Apóyanos con un café
             </button>
@@ -90,6 +96,7 @@ const Home = () => {
       </section>
 
       <ServicesBar />
+      <About />
     </>
   );
 };
