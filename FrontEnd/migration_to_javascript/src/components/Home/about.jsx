@@ -11,8 +11,8 @@ const About = () => {
             de los ciclistas en el Valle de Aburrá.
           </p>
         </div>
-        <div className="grid grid-cols-3 gap-3 px-2 text-center">
-          <div className="border py-8 px-10 rounded-xl shadow-xl w-full md:w-90">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 px-2 text-center">
+          <div className="border py-8 px-10 rounded-xl shadow-xl w-full">
             <p className="text-2xl font-bold">Desarrollada por estudiantes</p>
             <p className="text-gray-500 mt-2">
               Esta aplicación fue desarrollada como un proyecto de una
@@ -20,14 +20,14 @@ const About = () => {
             </p>
           </div>
 
-          <div className="border py-8 px-10 rounded-xl shadow-xl w-full md:w-90">
+          <div className="border py-8 px-10 rounded-xl shadow-xl w-full">
             <p className="text-2xl font-bold">100% Colombiana</p>
             <p className="text-gray-500 mt-2">
               Desarrollada aquí mismo en el Valle de Aburrá.
             </p>
           </div>
 
-          <div className="border py-8 px-10 rounded-xl shadow-xl w-full md:w-90">
+          <div className="border py-8 px-10 rounded-xl shadow-xl w-full">
             <p className="text-2xl font-bold">
               Pensada para el Valle de Aburrá
             </p>
