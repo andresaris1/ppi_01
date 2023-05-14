@@ -1,27 +1,30 @@
 import React, { useState } from "react";
-import '../../App.css';
+import "../../App.css";
 
+function DropDown({ children, optionsConfig }) {
+  // State variable to keep track of whether the dropdown is open or closed
+  const [open, setOpen] = useState(false);
 
-function DropDown( {children, optionsConfig} ){
+  // Function to toggle the dropdown menu
+  const toggleMenu = () => {
+    setOpen(!open);
+  };
 
-    const [ open, setOpen ] = useState(false) 
-    
-    const toggleMenu = () =>{
-        setOpen(!open);
-    }
+  return (
+    // Dropdown container
+    <div className={"dropdown"}>
+      {/* Dropdown button */}
+      <a onClick={toggleMenu}> {children} </a>
 
-    return(
-        <div className={"dropdown"}>
-            <a onClick={ toggleMenu }> { children } </a>
-                {
-                    open ?
-                    <>
-                        { React.cloneElement(optionsConfig, { setOpen : setOpen }) }
-                    </> : 
-                    null
-                }
-        </div>
-    )
+      {/* Dropdown options */}
+      {open ? (
+        <>
+          {/* Render the options using the cloned optionsConfig element */}
+          {React.cloneElement(optionsConfig, { setOpen: setOpen })}
+        </>
+      ) : null}
+    </div>
+  );
 }
 
-export { DropDown } 
+export { DropDown };

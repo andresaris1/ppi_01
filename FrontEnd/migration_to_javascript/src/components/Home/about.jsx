@@ -14,7 +14,10 @@ const About = () => {
             de los ciclistas en el Valle de Aburrá.
           </p>
         </div>
+
+        {/* Grid of the cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3 px-2 text-center">
+          {/* Card #1 */}
           <div className="border py-8 px-10 rounded-xl shadow-xl w-full">
             <p className="text-2xl font-bold">Desarrollada por estudiantes</p>
             <p className="text-gray-500 mt-2">
@@ -23,6 +26,7 @@ const About = () => {
             </p>
           </div>
 
+          {/* Card #2 */}
           <div className="border py-8 px-10 rounded-xl shadow-xl w-full">
             <p className="text-2xl font-bold">100% Colombiana</p>
             <p className="text-gray-500 mt-2">
@@ -30,6 +34,7 @@ const About = () => {
             </p>
           </div>
 
+          {/* Card #3 */}
           <div className="border py-8 px-10 rounded-xl shadow-xl w-full">
             <p className="text-2xl font-bold">
               Pensada para el Valle de Aburrá

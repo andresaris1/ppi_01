@@ -1,5 +1,6 @@
 function EnciclaPictureModal({ closeModal, station }) {
   return (
+    // Modal container
     <div className="modal">
       <figure className="station_picture">
         <img src={station?.picture} alt="Estación encicla" />

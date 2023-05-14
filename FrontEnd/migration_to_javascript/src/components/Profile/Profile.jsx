@@ -1,34 +1,42 @@
-import { useContext, useEffect } from 'react'
-import { useAxios } from '../utils/useAxios'
-import { AppContext } from '../../context/AppContext'
+import { useContext, useEffect } from "react";
+import { useAxios } from "../utils/useAxios";
+import { AppContext } from "../../context/AppContext";
 
+// Component to display the user's profile information.
+function Profile() {
+  //  Get the user and setUser from the AppContext.
+  const { user, setUser } = useContext(AppContext);
 
-function Profile () { 
-    const { user, setUser } = useContext(AppContext)
-    const api = useAxios()
+  //  Initialize the api hook.
+  const api = useAxios();
 
-    useEffect( () => {
+  //  Get the user's profile information.
+  useEffect(() => {
+    // Make API call to get the user's profile information.
+    const getProfileInfo = async () => {
+      const response = await api.get(
+        "https://bicimaps.herokuapp.com/api/user-detail/"
+      );
+      if (response.status === 200) {
+        setUser(response.data);
+      }
+    };
 
-        const getProfileInfo =  async () => {
-           const response = await api.get('https://bicimaps.herokuapp.com/api/user-detail/')
-            if(response.status === 200){
-                setUser(response.data)
-            } 
-        }
-        getProfileInfo()
+    // Call the function to get the user's profile information.
+    getProfileInfo();
+  }, []);
 
-    }, [] )
-
-    return(
-        <div className='profile_page'>
-            <p className='profile_item'>{ user.email }</p>
-            <p className='profile_item'>{ user.first_name }</p>
-            <p className='profile_item'>{ user.last_name }</p>
-            <p className='profile_item'>{ user.has_bike }</p>
-            <p className='profile_item'>{ user.is_staff }</p>
-            <p className='profile_item'>{ user.is_active }</p>
-        </div>
-    )
+  //  Return the code to display the user's profile information.
+  return (
+    <div className="profile_page">
+      <p className="profile_item">{user.email}</p>
+      <p className="profile_item">{user.first_name}</p>
+      <p className="profile_item">{user.last_name}</p>
+      <p className="profile_item">{user.has_bike}</p>
+      <p className="profile_item">{user.is_staff}</p>
+      <p className="profile_item">{user.is_active}</p>
+    </div>
+  );
 }
 
-export { Profile }
+export { Profile };
