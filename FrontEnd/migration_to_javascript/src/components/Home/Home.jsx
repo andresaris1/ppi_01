@@ -39,6 +39,7 @@ const Home = () => {
     window.location.href = "https://github.com/andresaris1/ppi_01";
   };
 
+  // Redirect to buy me a coffee
   const buyMeACoffee = () => {
     window.location.href = "https://www.buymeacoffee.com/bicimaps";
   };
@@ -57,8 +58,8 @@ const Home = () => {
             <h1 className="text-7xl font-bold text-[#1E293B]">
               Somos <span className="text-bl" ref={typ}></span>
             </h1>
-            {/* Second part of first col */}
           </div>
+
           {/* Description paragraph */}
           <p className="text-gray-600 text-2xl ">
             Somos una app para ciclistas que busca mejorar la experiencia de
@@ -78,10 +79,10 @@ const Home = () => {
               Apóyanos con un café
             </button>
 
-            {/* Button repo in GitHub */}
+            {/* Button github */}
             <button
               onClick={githubRedirect}
-              class="bg-transparent flex items-center gap-2 text-left leading-4 "
+              class="bg-transparent flex items-center gap-2 text-left leading-4"
             >
               <FaGithub size="2em" />
               Ver <br /> el código
@@ -89,7 +90,7 @@ const Home = () => {
           </div>
         </div>
 
-        {/* Contenido segunda columna */}
+        {/* Second column content */}
         <div className="md:col-span-3">
           <img src={bike} />
         </div>
