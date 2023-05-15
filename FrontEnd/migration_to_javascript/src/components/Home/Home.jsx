@@ -5,6 +5,7 @@ import Typed from "typed.js";
 // Import component
 import { ServicesBar } from "./ServicesBar";
 import { About } from "./about";
+import { Authors } from "./authors";
 // Import icons
 import { FaGithub } from "react-icons/fa";
 // Import gif biker
@@ -98,6 +99,7 @@ const Home = () => {
 
       <ServicesBar />
       <About />
+      <Authors />
     </>
   );
 };
