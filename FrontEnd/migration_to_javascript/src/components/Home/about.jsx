@@ -18,30 +18,38 @@ const About = () => {
         {/* Grid of the cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3 px-2 text-center">
           {/* Card #1 */}
-          <div className="border py-8 px-10 rounded-xl shadow-xl w-full">
-            <p className="text-2xl font-bold">Desarrollada por estudiantes</p>
-            <p className="text-gray-500 mt-2">
-              Esta aplicación fue desarrollada como un proyecto de una
-              asignatura de la Universidad Nacional Sede Medellín.
-            </p>
+          <div className="flex items-center border py-8 px-10 rounded-xl shadow-xl w-full">
+            <div className="h-full">
+              <p className="text-2xl font-bold">Desarrollada por estudiantes</p>
+              <p className="text-gray-500 mt-2">
+                Esta aplicación fue desarrollada como un proyecto de la
+                asignatura Programación para Ingeniería de la Universidad Nacional, Sede Medellín.
+              </p>
+            </div>
           </div>
 
           {/* Card #2 */}
-          <div className="border py-8 px-10 rounded-xl shadow-xl w-full">
-            <p className="text-2xl font-bold">100% Colombiana</p>
-            <p className="text-gray-500 mt-2">
-              Desarrollada aquí mismo en el Valle de Aburrá.
-            </p>
+          <div className="flex items-center border py-8 px-10 rounded-xl shadow-xl w-full">
+            <div className="h-3/4">
+              <p className="text-2xl font-bold">100% Colombiana</p>
+              <p className="text-gray-500 mt-2">
+                Desarrollada pensando en el Valle de Aburrá.
+              </p>
+            </div>
+            
           </div>
 
           {/* Card #3 */}
-          <div className="border py-8 px-10 rounded-xl shadow-xl w-full">
-            <p className="text-2xl font-bold">
-              Pensada para el Valle de Aburrá
-            </p>
-            <p className="text-gray-500 mt-2">
-              Conocemos el problema, porque lo vivimos día a día.
-            </p>
+          <div className="flex items-center border py-8 px-10 rounded-xl shadow-xl w-full">
+            <div className="h-3/4">
+              <p className="text-2xl font-bold">
+                Pensada para el Valle de Aburrá
+              </p>
+              <p className="text-gray-500 mt-2">
+                Conocemos el problema, porque lo vivimos día a día.
+              </p>
+            </div>
+            
           </div>
         </div>
       </div>
