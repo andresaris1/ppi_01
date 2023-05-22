@@ -49,7 +49,6 @@ const RoutingMachine = () => {
           urlParameters: {
             vehicle: "bike",
             locale: "es",
-            weighting: "fastest",
           },
         }
       ),
