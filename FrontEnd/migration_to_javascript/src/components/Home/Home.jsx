@@ -5,6 +5,7 @@ import Typed from "typed.js";
 // Import component
 import { ServicesBar } from "./ServicesBar";
 import { About } from "./about";
+import { Footer } from "./footer";
 // Import icons
 import { FaGithub } from "react-icons/fa";
 // Import gif biker
@@ -47,12 +48,10 @@ const Home = () => {
 
   return (
     <>
-      <div className="flex overflow-hidden flex-col flex-wrap lg:flex-none" >  
+      <div className="flex overflow-hidden flex-col flex-wrap lg:flex-none">
         <section className="w-screen grid grid-cols-1 md:grid-cols-8">
           {/* First col content */}
-          <div
-            className="md:col-span-5 flex flex-col justify-center gap-8 p-20"
-          >
+          <div className="md:col-span-5 flex flex-col justify-center gap-8 p-20">
             {/* Text title */}
             <div className="gap-4">
               <span className="text-6xl font-bold">Hola,</span>
@@ -100,7 +99,8 @@ const Home = () => {
         </section>
         <ServicesBar />
         <About />
-        <Authors/>
+        <Authors />
+        <Footer />
       </div>
     </>
   );
