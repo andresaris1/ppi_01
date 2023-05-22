@@ -5,7 +5,7 @@ import Felipe from "../../assets/author3.svg";
 // Import icons
 import { FaGithub, FaEnvelope } from "react-icons/fa";
 // Import mailto
-import ButtonMailto from "./mailto";
+import ButtonMailto from "./Mailto";
 
 // Redirect to github
 // Redirect to github Juan David
@@ -49,10 +49,10 @@ const Authors = () => {
             <h2 className="text-gray-500"> Estudiante UNAL Sede Medellín</h2>
             <p className="text-gray-500 mt-2"></p>
             {/* Buttons */}
-            <div className="actions flex justify-center items-center">
-              <button className="mr-4" onClick={githubJuan}>
+            <div className="flex  justify-center items-center">
+              <a className="mr-4" href="https://github.com/judhenaoma" target="_blank">
                 <FaGithub size="2em" />
-              </button>
+              </a>
               <ButtonMailto mailto="mailto:judhenaoma@unal.edu.co" />
             </div>
           </div>
@@ -65,9 +65,9 @@ const Authors = () => {
             <p className="text-gray-500 mt-2"></p>
             {/* Buttons */}
             <div className="actions flex justify-center items-center">
-              <button className="mr-4" onClick={githubMariana}>
+              <a className="mr-4" href="https://github.com/Marihp" target="_blank">
                 <FaGithub size="2em" />
-              </button>
+              </a>
               <ButtonMailto mailto="mailto:marhernandezpa@unal.edu.co" />
             </div>
           </div>
@@ -80,9 +80,9 @@ const Authors = () => {
             <p className="text-gray-500 mt-2"></p>
             {/* Buttons */}
             <div className="actions flex justify-center items-center">
-              <button className="mr-4" onClick={githubFelipe}>
+              <a className="mr-4" href="https://github.com/fmunoze" target="_blank">
                 <FaGithub size="2em" />
-              </button>
+              </a>
               <ButtonMailto mailto="mailto:fmunoze@unal.edu.co" />
             </div>
           </div>

@@ -1,7 +1,6 @@
 import { useState, useRef, useEffect, useId } from "react";
 import { useAxios } from "../utils/useAxios";
 
-// Define the Review component.
 function Review({
   coordinates,
   setReviewMode,
@@ -9,7 +8,6 @@ function Review({
   setReviews,
   setReviewCreated,
 }) {
-  // Initialize state variables ande refs.
   const textAreaRef = useRef(null);
   const api = useAxios();
   const uniqueId = useId();
@@ -21,13 +19,11 @@ function Review({
     review: "",
   });
   const [loadingFetch, setLoadingFetch] = useState(false);
-
-  // Set focus on the textarea when the component mounts.
   useEffect(() => {
     textAreaRef.current.focus();
   }, [coordinates]);
 
-  // Event handlers.
+  //  Handlers
   const handleInput = (e) => {
     if (review.review.length < 200) {
       setReview({ ...review, review: e.target.value });
@@ -66,8 +62,6 @@ function Review({
       .catch((error) => console.log(error))
       .finally(() => setLoadingFetch(false));
   };
-
-  // Return the code to display the Review component.
   return (
     <>
       <div

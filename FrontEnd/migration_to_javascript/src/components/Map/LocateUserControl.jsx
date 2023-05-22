@@ -1,18 +1,24 @@
-import { useState } from "react";
-import { useMapEvents, useMap } from "react-leaflet";
+import { useState } from "react"
+import { useMap } from "react-leaflet"
 
-function LocateUserControl({ userPosition }) {
-  const [position, setPosition] = useState(null);
-  const mapInstance = useMap();
+function LocateUserControl( {userPosition} ){
 
-  const handleUserPosition = (e) => {
-    if (userPosition) {
-      mapInstance.flyTo(userPosition, 16);
-      return;
+    const [position, setPosition] = useState(null)
+    const mapInstance = useMap()
+
+    const handleUserPosition = (e) =>{
+
+        if(userPosition){
+            mapInstance.flyTo(userPosition, 16)
+            return; 
+        }
+        mapInstance.locate();
     }
-    mapInstance.locate();
-  };
 
-  return <button onClick={handleUserPosition}> Mi posición </button>;
+    return(
+        <button onClick={ handleUserPosition }> 
+            Mi posición 
+        </button>
+    )
 }
-export { LocateUserControl };
+export { LocateUserControl }
