@@ -18,6 +18,7 @@ const RoutingMachine = () => {
   useEffect(() => {
     if (!mapInstance) return;
 
+    // Routing control
     const routingControl = L.Routing.control({
       profile: "cycling",
       language: "es",
@@ -34,10 +35,44 @@ const RoutingMachine = () => {
         suggestionMinLength: 3,
         suggest: true,
       }),
+
+      // Graphhopper routing machine
       router: new L.Routing.GraphHopper(GraphHopperAPIKEY, {
         urlParameters: {
           vehicle: "bike",
           locale: "es",
+
+          // Put some priority to the route
+          priority: [
+            {
+              if: "max_speed >= 50",
+              multiply_by: "0.3",
+            },
+            {
+              if: "bike_network == MISSING",
+              multiply_by: "0.9",
+            },
+            {
+              if: "surface == 'cobblestone'",
+              multiply_by: "1.2",
+            },
+            {
+              if: "surface == 'unpaved'",
+              multiply_by: "1.3",
+            },
+            {
+              if: "elevation_up >= 100",
+              multiply_by: "0.8",
+            },
+            {
+              if: "elevation_down >= 100",
+              multiply_by: "1.2",
+            },
+            {
+              if: "road_class == path",
+              multiply_by: "1.2",
+            },
+          ],
         },
       }),
     }).addTo(mapInstance);
@@ -50,4 +85,5 @@ const RoutingMachine = () => {
   return null;
 };
 
+// Export RoutingMachine component
 export { RoutingMachine };

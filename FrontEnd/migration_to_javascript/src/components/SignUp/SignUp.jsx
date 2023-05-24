@@ -6,8 +6,10 @@ import { PasswordField } from "../utils/PasswordField";
 import { Modal } from "../Modal/Modal";
 import { TermsModal } from "./TermsModal";
 
+// Link API endpoint signup
 const URL_SIGNUP = "https://bicimaps.herokuapp.com/api/sign-up/";
 
+// SignUp component
 function SignUp() {
   const navigate = useNavigate();
   const [notice, setNotice] = useState({ show: false, content: "", type: "" });
@@ -18,15 +20,18 @@ function SignUp() {
     has_bike: "True",
   });
 
+  // Password state
   const [password, setPassword] = useState({
     password: "",
     password_confirmation: "",
   });
 
+  // Password validations
   const [invalidPassword, setInvalidPassword] = useState(false);
   const [invalidPasswordLength, setInvalidPasswordLength] = useState(false);
-  const [showTermsModal, setShowTermsModal ] = useState(false)
+  const [showTermsModal, setShowTermsModal] = useState(false);
 
+  // Setting password validations
   useEffect(() => {
     if (password.password && password.password_confirmation) {
       if (password.password !== password.password_confirmation) {
@@ -43,12 +48,14 @@ function SignUp() {
     }
   }, [password]);
 
+  // Check if all fields are filled
   const allFieldsFilled = () => {
     if (userInfo.email && userInfo.first_name && userInfo.last_name) {
       return true;
     }
     return false;
   };
+
   // Helper
   const readyToSend = () => {
     if (password.password) {
@@ -70,10 +77,8 @@ function SignUp() {
   };
 
   const showModal = () => {
-
-    setShowTermsModal(true)
-
-  }
+    setShowTermsModal(true);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -107,15 +112,14 @@ function SignUp() {
       });
   };
 
+  // Return the component
   return (
     <>
-      {
-        showTermsModal && (
-          <Modal>
-            <TermsModal closeModal={setShowTermsModal} />
-          </Modal>
-        )
-      }
+      {showTermsModal && (
+        <Modal>
+          <TermsModal closeModal={setShowTermsModal} />
+        </Modal>
+      )}
       <div className="flex min-h-full mx-auto mb-10 mt-4 lg:mt-10 flex-1 shadow-lg border border-zinc-300 rounded shadow-gray-500/40 relative">
         <div className="flex flex-1 flex-col items-center px-4 py-1 md:py-6 sm:px-6 lg:flex-none lg:px-20 xl:px-24">
           <div className="mx-auto lg:w-96">
@@ -188,25 +192,7 @@ function SignUp() {
                     </div>
                   </div>
 
-                  <div>
-                    <label
-                      htmlFor="bici"
-                      className="block text-sm font-medium leading-6 text-gray-900"
-                    >
-                      Tienes bici?
-                    </label>
-                    <select
-                      name="has_bike"
-                      id="bici"
-                      value={userInfo.has_bike}
-                      onChange={handleInputChange}
-                      className="mt-2 block w-full rounded-md border-0 py-1.5 pl-3 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-main-green sm:text-sm sm:leading-6"
-                    >
-                      <option value="True">Sí</option>
-                      <option value="False">No</option>
-                    </select>
-                  </div>
-
+                  {/* Password Fields */}
                   <div>
                     <label
                       htmlFor="password"
@@ -238,9 +224,15 @@ function SignUp() {
                   </div>
 
                   <div>
-                    <p className="text-xs mb-2">Al registrarte entendemos que estás de acuerdo con las 
-                        <a onClick={showModal} className="text-blue-400 cursor-pointer"> políticas de tratamiento de datos
-                        </a>
+                    <p className="text-xs mb-2">
+                      Al registrarte entendemos que estás de acuerdo con las
+                      <a
+                        onClick={showModal}
+                        className="text-blue-400 cursor-pointer"
+                      >
+                        {" "}
+                        políticas de tratamiento de datos
+                      </a>
                       .
                     </p>
 
