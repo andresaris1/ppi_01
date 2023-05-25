@@ -32,36 +32,44 @@ function Map({ appRef }) {
   const [stations, setStations] = useState([]);
   const [stationsLoaded, setStationsLoaded] = useState(false);
   const [showEstations, setShowStations] = useState(true);
-  // Bike wayss
+
+  // Bike ways
   const [bikeWays, setBikeWays] = useState([]);
   const [bikewaysLoaded, setBikewaysLoaded] = useState(false);
   const [clickedBikeWay, setClickedBikeWay] = useState(null);
   const [showBikeways, setShowBikeWays] = useState(false);
+
   // Reviews
   const [reviewMode, setReviewMode] = useState(false);
   const [reviewCoords, setReviewCoords] = useState(null);
   const [reviews, setReviews] = useState([]);
   const [reviewsLoaded, setReviewsLoaded] = useState(false);
   const [showReviews, setShowReviews] = useState(false);
+
   // Reviews - show notice box when a review is created
   const [showNotice, setNotice] = useState({
     show: false,
     content: "",
     type: "",
   });
+
   // User ubication
   const [userPosition, setUserPosition] = useState(null);
+
   // Handler user scale to show things
   const [nearScale, setNearScale] = useState(false);
+
   // MapTile showed on map
   const [mapTile, setMapTile] = useState("default");
+
   // Bike parking
   const [parking, setParking] = useState([]);
   const [parkingLoaded, setParkingLoaded] = useState(false);
   const [showParking, setShowParking] = useState(false);
 
   useEffect(() => {
-    (async () => {
+    // Fetch Encicla Stations data
+    const fetchStations = async () => {
       try {
         const { data } = await axios.get(
           "https://webapp.metropol.gov.co/wsencicla/api/Disponibilidad/GetDisponibilidadMapas/"
@@ -71,9 +79,10 @@ function Map({ appRef }) {
       } catch (error) {
         console.log(error);
       }
-    })();
+    };
 
-    (async () => {
+    // Fetch Bike ways data
+    const fetchBikeWays = async () => {
       try {
         const response = await axios.get(
           "https://bicimaps.herokuapp.com/api/bikeways/"
@@ -86,9 +95,10 @@ function Map({ appRef }) {
       } catch (error) {
         console.log(error);
       }
-    })();
+    };
 
-    (async () => {
+    // Fetch Reviews data
+    const fetchReviews = async () => {
       try {
         const response = await axios.get(
           "https://bicimaps.herokuapp.com/api/reviews/"
@@ -100,9 +110,10 @@ function Map({ appRef }) {
       } catch (error) {
         console.log(error);
       }
-    })();
+    };
 
-    (async () => {
+    // Fetch Bike parking data
+    const fetchParking = async () => {
       try {
         const response = await axios.get(
           "https://bicimaps.herokuapp.com/api/bike-parking-list/"
@@ -115,7 +126,13 @@ function Map({ appRef }) {
       } catch (error) {
         console.log(error);
       }
-    })();
+    };
+
+    // Call the fetch functions
+    fetchStations();
+    fetchBikeWays();
+    fetchReviews();
+    fetchParking();
   }, []);
 
   // Effect to handler the cursor icon when is review mode on
@@ -136,7 +153,7 @@ function Map({ appRef }) {
       });
   }, [reviewMode]);
 
-  // Style settings of the map
+  // Style settings of icons and labels
   const stationsIcon = new L.Icon({
     iconUrl: locationLogo,
     iconSize: [25, 25],
@@ -182,8 +199,6 @@ function Map({ appRef }) {
     weight: 7,
     opacity: 1,
   };
-
-  // Handlers
 
   return (
     <>

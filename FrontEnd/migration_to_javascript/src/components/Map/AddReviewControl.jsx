@@ -1,18 +1,17 @@
-import { useState } from "react"
+import { useState } from "react";
 
-function AddReviewControl( { reviewMode, setReviewMode } ){
+// Function to add a review
+function AddReviewControl({ reviewMode, setReviewMode }) {
+  // Function to toggle review mode
+  const toggleReviewMode = () => {
+    setReviewMode(!reviewMode);
+  };
 
-    const toggleReviewMode = () => {
-        setReviewMode(!reviewMode)
-      }
+  return (
+    <button disabled={reviewMode ? true : false} onClick={toggleReviewMode}>
+      Agrega una reseña
+    </button>
+  );
+}
 
-    return(
-        
-        <button disabled = { reviewMode ? true : false } 
-                onClick = { toggleReviewMode } >
-            Agrega una reseña 
-        </button>
-    )
-}   
-
-export { AddReviewControl }
+export { AddReviewControl };

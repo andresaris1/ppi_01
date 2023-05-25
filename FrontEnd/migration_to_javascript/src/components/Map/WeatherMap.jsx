@@ -12,6 +12,7 @@ const WeatherMap = () => {
   useEffect(() => {
     if (!mapInstance) return;
 
+    // Overlay layers
     const precipitationLayer = L.tileLayer(
       `https://tile.openweathermap.org/map/precipitation_new/{z}/{x}/{y}.png?appid=${openWeatherMapAPIKey}`,
       {
@@ -72,6 +73,7 @@ const WeatherMap = () => {
       Nubes: cloudsLayer,
     };
 
+    // Group base layers
     var baseMaps = {
       Predeterminado: defaultLayer,
       Satelite: sateliteLayer,

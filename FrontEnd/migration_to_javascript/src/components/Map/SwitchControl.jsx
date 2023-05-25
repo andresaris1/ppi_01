@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "../../App.css";
 
-// SwitchControl component
+// Switch Control component
 function SwithControl({ name, show, onToggle }) {
   const toggleSwitch = () => {
     onToggle((prev) => !prev);

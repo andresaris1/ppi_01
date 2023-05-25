@@ -9,27 +9,32 @@ import { Notice } from "../Notice/Notice";
 const URL_LOGIN = "https://bicimaps.herokuapp.com/api/login/";
 
 function Login() {
-  //Consuming context
+  // Consuming context
   const { setLoggedIn, loggedIn, notice, setNotice } = useContext(AppContext);
   console.log(loggedIn);
+
   const [error, setError] = useState("");
+
   // React router helper
   const navigate = useNavigate();
 
+  // Credentials state
   const [credentials, setCredentials] = useState({
     email: "",
     password: "",
   });
 
-  //Handlers
+  // Change event handler for input fields
   const handleChange = (e) => {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
   };
 
+  // Form submit handler
   const handleSubmit = (e) => {
     e.preventDefault();
     const parsedCredentials = JSON.stringify(credentials);
 
+    // Login request and validations
     postLogin(URL_LOGIN, parsedCredentials)
       .then((data) => {
         if (data.access) {
@@ -51,6 +56,7 @@ function Login() {
       });
   };
 
+  // Render component
   return (
     <>
       {notice.show && (
@@ -137,4 +143,5 @@ function Login() {
     </>
   );
 }
+
 export { Login };

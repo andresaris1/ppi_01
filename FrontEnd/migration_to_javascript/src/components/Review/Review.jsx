@@ -19,22 +19,25 @@ function Review({
     review: "",
   });
   const [loadingFetch, setLoadingFetch] = useState(false);
+
   useEffect(() => {
     textAreaRef.current.focus();
   }, [coordinates]);
 
-  //  Handlers
+  // Event handler for input changes
   const handleInput = (e) => {
     if (review.review.length < 200) {
       setReview({ ...review, review: e.target.value });
     }
   };
 
+  // Close the review form
   const closeReview = () => {
     setReviewMode(false);
     setReviewCoords(null);
   };
 
+  // Save the review
   const saveReview = (e) => {
     e.preventDefault();
     if (review.review.length < 5) {
@@ -46,15 +49,16 @@ function Review({
         headers: { "Content-Type": "application/json" },
       })
       .then((response) => {
-        response.status === 201 &&
+        if (response.status === 201) {
           setReviewCreated({
             show: true,
-            content: "Reseña creada exitosamente",
+            content: "Review created successfully",
             type: "success",
           });
+        }
         setReviews((prev) => [
           ...prev,
-          { ...review, user_id: "Yo :)", review_id: uniqueId },
+          { ...review, user_id: "Me :)", review_id: uniqueId },
         ]);
         setReviewMode(false);
         setReviewCoords(null);
@@ -62,15 +66,15 @@ function Review({
       .catch((error) => console.log(error))
       .finally(() => setLoadingFetch(false));
   };
+
   return (
     <>
       <div
         className="review_form_container"
         style={{ top: coordinates.box.y, left: coordinates.box.x }}
       >
-        {" "}
         {loadingFetch ? (
-          <h1>Cargando...</h1>
+          <h1>Loading...</h1>
         ) : (
           <>
             <form onSubmit={saveReview} className="review_form">
@@ -79,21 +83,18 @@ function Review({
                 onChange={handleInput}
                 value={review.review}
                 ref={textAreaRef}
-                placeholder="Máx. 200 carácteres."
+                placeholder="Max 200 characters."
               ></textarea>
 
               <ul className="review_btns">
                 <li>
-                  {" "}
                   <button onClick={closeReview} type="button">
-                    {" "}
-                    Cancelar
+                    Cancel
                   </button>
                 </li>
                 <li>
                   <button className="save_review_btn" type="submit">
-                    {" "}
-                    Guardar
+                    Save
                   </button>
                 </li>
               </ul>
