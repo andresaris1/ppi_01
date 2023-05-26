@@ -1,9 +1,9 @@
 # Bici Maps
 
 ## Tabla de contenido
-- [Objetivo](https://github.com/andresaris1/ppi_01/edit/main/README.md#objetivo)
-- [¿Cómo es la aplicación?](https://github.com/andresaris1/ppi_01/edit/main/README.md#cómo-es-la-aplicación)
-- [Despliegue de la aplicación](https://github.com/andresaris1/ppi_01/edit/main/README.md#link-despliegue-aplicación)
+- [Objetivo](#objetivo)
+- [¿Cómo es la aplicación?](#cómo-es-la-aplicación)
+- [Despliegue de la aplicación](#link-despliegue-aplicación)
 - [Funcionalidades](#funcionalidades)
 - [Contacto](#equipo-desarrollador-y-contacto)
 
