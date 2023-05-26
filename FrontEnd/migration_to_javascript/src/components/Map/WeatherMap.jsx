@@ -86,6 +86,7 @@ const WeatherMap = () => {
       .setPosition("topleft")
       .addTo(mapInstance);
 
+      layerControl.getContainer().className += ' weather_map_container';
     // Remove duplicated layer control
     return () => {
       mapInstance.removeControl(layerControl);
